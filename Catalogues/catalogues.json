@@ -1,0 +1,48 @@
+[
+	{
+		"titre" : "Noms",
+		"dossier" : "noms",
+		"couleur" : "#91c8ff",
+		"width" : "20px",
+		"height" : "20px",
+		"id" : "noms",
+		"posit" : "02"
+	},
+	{
+		"titre" : "Verbes",
+		"dossier" : "verbes",
+		"couleur" : "#ff9191",
+		"width" : "20px",
+		"height" : "20px",
+		"id" : "verbes",
+		"posit" : "03"
+	},
+	{
+		"titre" : "Adjectifs",
+		"dossier" : "adjectifs",
+		"couleur" : "#96ff91",
+		"width" : "20px",
+		"height" : "20px",
+		"id" : "adjectifs",
+		"posit" : "04"
+	},
+	{
+		"titre" : "Petits&nbsp;mots",
+		"dossier" : "petitsmots",
+		"couleur" : "#fff391",
+		"width" : "20px",
+		"height" : "20px",
+		"id" : "petitsmots",
+		"posit" : "05"
+	},
+	{
+		"titre" : "",
+		"dossier" : "grosnavet",
+		"couleur" : "#CACACA",
+		"width" : "60px",
+		"height" : "60px",
+		"id" : "grosnavet",
+		"posit" : "01"
+	}	
+]
+
