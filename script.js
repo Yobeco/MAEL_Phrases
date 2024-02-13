@@ -504,8 +504,8 @@ function generList(){
     console.log('Contenu de "tradList" : ' + tradList.toString());
 
     let textGenere = document.getElementById('text-genere');
-    // textGenere.innerHTML = 'Coucou';
-    textGenere.innerHTML = tradList.toString();    // Does not work yet. Will display AI-generated sentence
+    // textGenere.innerHTML = 'Coucou';  // Will display AI-generated sentence
+    textGenere.innerHTML = tradList.toString();    // Does not work yet: asynchronus problem. 
 
     /**
     console.log('Valeur de "tradList[0]" : ' + tradList[0]);
