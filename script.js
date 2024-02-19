@@ -494,7 +494,7 @@ async function generList(){
 
 
         // Create a temporary list containing the info needed to retrieve the translation
-        //         tradFromId(val_JSON, val_theme, val_id_carte, val_langue)
+        // syntaxis : tradFromId(val_JSON,        val_theme,          val_id_carte,   val_langue)
         promises.push(tradFromId(jsonFileURL, element.dataset.theme, element.dataset.id, mitCode));
 
     });
@@ -502,12 +502,14 @@ async function generList(){
     // Waiting for all promises to be resolved
     const results = await Promise.all(promises);
 
+    console.log(results);
+
     // Add results to tradList
     results.forEach(result => {
         tradList.push(result[0]);
     });
 
-    console.log('Valeur de "elementList" : ', elementList);                                           // Displays the ID list
+    console.log('Valeur de "elementList" : ', elementList);       // Displays the ID list
     console.log('Valeur de "tradList" : ', tradList);
     return tradList;
 
@@ -515,25 +517,26 @@ async function generList(){
 
 function direList() {
     let textGenere = document.getElementById('text-genere');
-    generList().then(text => textGenere.innerHTML = text);
+
+    generList().then(text => {
+        textGenere.innerHTML = text;
+        console.log("Lancement de la synthèse vocale...");
+
+        // Creating a synthetic voice object - 
+        // SpeechSynthesisUtterance is provisional: quality is only good with Chrome
+        let parole = new SpeechSynthesisUtterance();
+
+        // Configure object :
+        parole.lang = ssuCode;              // Current language
+        parole.text = text;                 // What the generList() promise returns after resolution. Wil be send to IA instead of SpeechSynthesis 
+        parole.pitch = 1;                   // 1 - 2
+        parole.rate = 1;                    // 0.5 - 2
+        parole.volume = 1;                  // 0 - 1 
+
+        speechSynthesis.speak(parole);
+    });
 }
 
-
-    /**
-    console.log('Valeur de "tradList[0]" : ' + tradList[0]);
-
-    // Creating a synthetic voice object
-    let parole = new SpeechSynthesisUtterance();
-
-    // Configure object :
-    parole.lang = ssuCode;              // Langue en cours
-    parole.text = tradList[0];          // 
-    parole.pitch = 1;                   // 1 - 2
-    parole.rate = 1;                    // 0.5 - 2
-    parole.volume = 1;                  // 0 - 1 
-
-    speechSynthesis.speak(parole);
-    **/
 
 // #########################################################################################################
 
@@ -543,7 +546,6 @@ function direList() {
 document.getElementById('dire').addEventListener('click', direList);
 
 // #########################################################################################################
-
 
 // Default theme settings at startup
 let dossier = "noms";
