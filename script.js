@@ -507,15 +507,15 @@ async function generList(){
         tradList.push(result[0]);
     });
 
-    console.log(elementList);                                           // Displays the ID list
-    console.log('Valeur de "tradList" : ',  tradList);                  // updated after page display?
+    console.log('Valeur de "elementList" : ', elementList);                                           // Displays the ID list
+    console.log('Valeur de "tradList" : ', tradList);
     return tradList;
 
 }
 
 function direList() {
     let textGenere = document.getElementById('text-genere');
-    generList().then(text => console.log(textGenere.innerHTML = text));
+    generList().then(text => textGenere.innerHTML = text);
 }
 
 
