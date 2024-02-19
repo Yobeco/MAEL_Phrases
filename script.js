@@ -471,12 +471,15 @@ function creaPoub(){
 
 // /!\ generList() is not yet fully functional: assynchronism problem 
 
-function generList(){
+async function generList(){
 
     let elementList = [];
     let tradList = [];
 
     let div = document.getElementById('container-line');
+    let promises = []; // Ajout d'un tableau pour stocker toutes les promesses
+
+
     div.querySelectorAll('*').forEach(element => {
         // Create a temporary list containing the info needed to retrieve the translation
         let tempList = [];
@@ -486,26 +489,35 @@ function generList(){
 
         elementList.push(tempList);
 
-        // Create a temporary list containing the info needed to retrieve the translation
+        // Create the url of the JSON
         let jsonFileURL = "Catalogues/" + element.dataset.json + "/" + element.dataset.json + ".json";
 
+
+        // Create a temporary list containing the info needed to retrieve the translation
         //         tradFromId(val_JSON, val_theme, val_id_carte, val_langue)
-        tradFromId(jsonFileURL, element.dataset.theme, element.dataset.id, mitCode).then(result => {
-            // console.log(result);
-            tradList.push(result[0]);
-        });
-      
+        promises.push(tradFromId(jsonFileURL, element.dataset.theme, element.dataset.id, mitCode));
+
     });
 
-    console.log(elementList); // Displays the ID list
+    // Waiting for all promises to be resolved
+    const results = await Promise.all(promises);
 
-    console.log('Valeur de "tradList" : ',  tradList); // Display translations
-    console.log('Type de "tradList" : ',tradList.constructor.name);
-    console.log('Contenu de "tradList" : ' + tradList.toString());
+    // Add results to tradList
+    results.forEach(result => {
+        tradList.push(result[0]);
+    });
 
+    console.log(elementList);                                           // Displays the ID list
+    console.log('Valeur de "tradList" : ',  tradList);                  // updated after page display?
+    return tradList;
+
+}
+
+function direList() {
     let textGenere = document.getElementById('text-genere');
-    // textGenere.innerHTML = 'Coucou';  // Will display AI-generated sentence
-    textGenere.innerHTML = tradList.toString();    // Does not work yet: asynchronus problem. 
+    generList().then(text => console.log(textGenere.innerHTML = text));
+}
+
 
     /**
     console.log('Valeur de "tradList[0]" : ' + tradList[0]);
@@ -523,14 +535,12 @@ function generList(){
     speechSynthesis.speak(parole);
     **/
 
-}
-
 // #########################################################################################################
 
 // Add a listner after creating the generList() function to make sure it's already created
 // Better than onclick="generList()" directly in the html code
 // Script.js loading became assynchronous when it became an ES6 module...
-document.getElementById('dire').addEventListener('click', generList);
+document.getElementById('dire').addEventListener('click', direList);
 
 // #########################################################################################################
 
