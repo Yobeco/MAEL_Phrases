@@ -502,9 +502,9 @@ async function generList(){
     // Waiting for all promises to be resolved
     const results = await Promise.all(promises);
 
-    console.log(results);
+    console.log('Images sur la <div> : ', results);      // To see the variable returned by "tradFromId
 
-    // Add results to tradList
+    // Fill the "tradList" table with the firsts elements of (translated words)
     results.forEach(result => {
         tradList.push(result[0]);
     });
@@ -515,27 +515,79 @@ async function generList(){
 
 }
 
-function direList() {
-    let textGenere = document.getElementById('text-genere');
+// ##################################################################
 
-    generList().then(text => {
-        textGenere.innerHTML = text;
-        console.log("Lancement de la synthèse vocale...");
+// Gemini configuration
 
-        // Creating a synthetic voice object - 
-        // SpeechSynthesisUtterance is provisional: quality is only good with Chrome
-        let parole = new SpeechSynthesisUtterance();
 
-        // Configure object :
-        parole.lang = ssuCode;              // Current language
-        parole.text = text;                 // What the generList() promise returns after resolution. Wil be send to IA instead of SpeechSynthesis 
-        parole.pitch = 1;                   // 1 - 2
-        parole.rate = 1;                    // 0.5 - 2
-        parole.volume = 1;                  // 0 - 1 
+import { GoogleGenerativeAI } from "@google/generative-ai";
 
-        speechSynthesis.speak(parole);
-    });
+// Access your API key (see "Set up your API key" above)
+// https://ai.google.dev/tutorials/web_quickstart?hl=fr#set-up-project
+const genAI = new GoogleGenerativeAI("Your_API_KEY");
+
+async function conf_AI() {
+    // For text-only input, use the gemini-pro model
+    const model = genAI.getGenerativeModel({ model: "gemini-pro"});
+
+    const prompt = "Contexte : Tu participes à une application. C'est une interface qui permet à des enfants apprenant à parler français de créer des phrases à partir de mots choisis dans des listes. Ils vont mettre dans l'ordre ces mots dans l'intention de créer des phrases. Rôle : Tu es une intelligence artificielle spécialisée dans le langage naturel. Utilise tes compétences pour créer des phrases les plus naturelles et les plus courantes possible avec les mots qui te seront donnés. Tâche : Avec chaque liste de mots, tu dois concevoir une seule phrase simple, compréhensible, appartenant au registre de langue courant. Tu dois obligatoirement utiliser tous les mots qui te sont donnés. Tu dois respecter l'ordre où les mots t'ont été proposés. Il t'est interdit de créer une phrase grossière. Quand c'est nécessaire, pour obtenir une phrase naturelle, tu peux ajouter des petits mots comme : des déterminants des conjonctions des prépositions où autres petits mots ou petites formules qui te paraîtront nécessaires. Si le sens de la phrase est plus naturel, tu peux remplacer les déterminants indéfinis par définis ou inversement. Si un nom est proposé deux fois d'affilé dans la liste que je t'envoies, mets ce nom au pluriel (exemple : si la liste que tu reçois contient [un chat,un chat] tu utiliseras 'des chat' dans la phrase que tu vas générer. Respecte bien l'orthographe lexicale et l'orthographe grammaticale. Réalises tous les accords en genre et en nombre des noms et des adjectifs. Réalises tous les accords de la conjugaison nécessaire. Favorise les phrases au présent de l'indicatif. Maintenant, renvoie-moi uniquement le mot 'Compris', sans aucun commentaire ni remarque. Attends la première liste."
+
+    const result = await model.generateContent(prompt);
+    const response = await result.response;
+    const text = response.text();
+    console.log("IA configurée");
+    // console.log(text);
 }
+
+conf_AI();
+
+async function liste_to_AI(txt0) {
+    // For text-only input, use the gemini-pro model
+    const model = genAI.getGenerativeModel({ model: "gemini-pro"});
+
+    // Planned : Export the prompt to a separate file and eliminate line breaks
+    const prompt = 'Voici une liste de mots : ' + txt0 + 'Maintenant, envoie-moi la phrase au présent que tu as composée, et uniquement cette phrase sans aucun commentaire.';
+
+    const result = await model.generateContent(prompt);
+    const response = await result.response;
+    const text = response.text();
+    // console.log(text);
+    return text;
+}
+
+
+// ##################################################################
+
+let text_IA = "";
+
+async function direList() {
+   let textGenere = document.getElementById('text-genere');
+
+   generList().then(async text => {
+
+       text_IA = await liste_to_AI(text);
+
+       console.log(text_IA)
+
+       // Put the text generated in the <div>
+       textGenere.innerHTML = text_IA;
+       console.log("Lancement de la synthèse vocale...");
+
+       // Creating a synthetic voice object - 
+       // SpeechSynthesisUtterance is provisional: quality is only good with Chrome
+       let parole = new SpeechSynthesisUtterance();
+
+       // Configure object :
+       parole.lang = ssuCode;             // Current language
+       parole.text = text_IA;                // What the generList() promise returns after resolution. Wil be send to IA instead of SpeechSynthesis 
+       parole.pitch = 1;                  // 1 - 2
+       parole.rate = 1;                   // 0.5 - 2
+       parole.volume = 1;                 // 0 - 1 
+
+       speechSynthesis.speak(parole);
+   });
+}
+
 
 
 // #########################################################################################################
