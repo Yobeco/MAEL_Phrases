@@ -526,17 +526,34 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 // https://ai.google.dev/tutorials/web_quickstart?hl=fr#set-up-project
 const genAI = new GoogleGenerativeAI("Your_API_KEY");
 
+// Fetch the prompt from the text file
+
+let prompt_1 = "";      // Variable to retrieve and use the prompt text
+
+fetch('prompt_FR.txt')
+    .then(response => response.text())
+    .then(data => {
+        // 'data' est le contenu du fichier .txt sous forme de string
+        //document.getElementById('fileContent').textContent = data;
+        console.log(data);
+        prompt_1 = data;
+    })
+    .catch((error) => {
+        console.error('Error with prompt text:', error);
+    });
+
+// Send configuration prompt to AI
 async function conf_AI() {
     // For text-only input, use the gemini-pro model
     const model = genAI.getGenerativeModel({ model: "gemini-pro"});
 
-    const prompt = "Contexte : Tu participes à une application. C'est une interface qui permet à des enfants apprenant à parler français de créer des phrases à partir de mots choisis dans des listes. Ils vont mettre dans l'ordre ces mots dans l'intention de créer des phrases. Rôle : Tu es une intelligence artificielle spécialisée dans le langage naturel. Utilise tes compétences pour créer des phrases les plus naturelles et les plus courantes possible avec les mots qui te seront donnés. Tâche : Avec chaque liste de mots, tu dois concevoir une seule phrase simple, compréhensible, appartenant au registre de langue courant. Tu dois obligatoirement utiliser tous les mots qui te sont donnés. Tu dois respecter l'ordre où les mots t'ont été proposés. Il t'est interdit de créer une phrase grossière. Quand c'est nécessaire, pour obtenir une phrase naturelle, tu peux ajouter des petits mots comme : des déterminants des conjonctions des prépositions où autres petits mots ou petites formules qui te paraîtront nécessaires. Si le sens de la phrase est plus naturel, tu peux remplacer les déterminants indéfinis par définis ou inversement. Si un nom est proposé deux fois d'affilé dans la liste que je t'envoies, mets ce nom au pluriel (exemple : si la liste que tu reçois contient [un chat,un chat] tu utiliseras 'des chat' dans la phrase que tu vas générer. Respecte bien l'orthographe lexicale et l'orthographe grammaticale. Réalises tous les accords en genre et en nombre des noms et des adjectifs. Réalises tous les accords de la conjugaison nécessaire. Favorise les phrases au présent de l'indicatif. Maintenant, renvoie-moi uniquement le mot 'Compris', sans aucun commentaire ni remarque. Attends la première liste."
+    const prompt = prompt_1
 
     const result = await model.generateContent(prompt);
     const response = await result.response;
     const text = response.text();
     console.log("IA configurée");
-    // console.log(text);
+    console.log("Réponse à la configuration : " + text);
 }
 
 conf_AI();
@@ -560,7 +577,7 @@ async function liste_to_AI(txt0) {
 
 let text_IA = "";
 
-async function direList() {
+async function direPhrase() {
    let textGenere = document.getElementById('text-genere');
 
    generList().then(async text => {
@@ -595,7 +612,7 @@ async function direList() {
 // Add a listner after creating the generList() function to make sure it's already created
 // Better than onclick="generList()" directly in the html code
 // Script.js loading became assynchronous when it became an ES6 module...
-document.getElementById('dire').addEventListener('click', direList);
+document.getElementById('dire').addEventListener('click', direPhrase);
 
 // #########################################################################################################
 
