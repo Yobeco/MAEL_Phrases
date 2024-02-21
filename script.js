@@ -530,12 +530,12 @@ const genAI = new GoogleGenerativeAI("Your_API_KEY");
 
 let prompt_1 = "";      // Variable to retrieve and use the prompt text
 
-fetch('prompt_FR.txt')
+fetch('prompt_frFRA.txt')       // .txt file wil change with language
     .then(response => response.text())
     .then(data => {
         // 'data' est le contenu du fichier .txt sous forme de string
         //document.getElementById('fileContent').textContent = data;
-        console.log(data);
+        // console.log(data);
         prompt_1 = data;
     })
     .catch((error) => {
@@ -553,18 +553,18 @@ async function conf_AI() {
     const response = await result.response;
     const text = response.text();
     console.log("IA configurée");
-    console.log("Réponse à la configuration : " + text);
+    console.log("Réponse à la configuration : ", text);      // Gives me completely irrelevant text !!!
 }
 
-conf_AI();
+// conf_AI();
 
 async function liste_to_AI(txt0) {
     // For text-only input, use the gemini-pro model
     const model = genAI.getGenerativeModel({ model: "gemini-pro"});
 
     // Planned : Export the prompt to a separate file and eliminate line breaks
-    const prompt = 'Voici une liste de mots : ' + txt0 + 'Maintenant, envoie-moi la phrase au présent que tu as composée, et uniquement cette phrase sans aucun commentaire.';
-
+    const prompt = prompt_1 + txt0
+    console.log("Prompt envoyé : ", prompt)
     const result = await model.generateContent(prompt);
     const response = await result.response;
     const text = response.text();
