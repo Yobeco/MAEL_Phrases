@@ -2,6 +2,7 @@
 import { tradFromId } from './json_search.js';
 
 // Golbal variables for language codes :
+let globalCode = "FR";   // Golbal variable for <select>
 let mitCode = "frFRA";   // Language code used by MAEL gen/Scan and in JSON (MIT Appinventor)
 let ssuCode = "fr-FR";   // Language code used by SpeechSynthesisUtterance()
 
@@ -126,6 +127,10 @@ function actuCorps(dossier, categ_id){
                 var listeLangues = listeTemplate.content.cloneNode(true);
                 div_trou_onglets.appendChild(listeLangues);
 
+                // Set the current language as the visible flag
+                const selectElement = document.getElementById("liste_pays");
+                selectElement.value = globalCode;
+
                 // Correspondence dictionary between language codes
                 let pays = [{   code: "FR",         // List code <select>
                                 mit : "frFRA",      // Code used to find the word in the json
@@ -154,12 +159,13 @@ function actuCorps(dossier, categ_id){
 
                 // Function to retrieve the value (language) selected by the user
                 function recupererValeurListe() {
-                  return selectLang.value;
+                   return selectLang.value;
                 }
 
                 // Listen to the "change" event to display the chosen value
                 selectLang.addEventListener("change", function() {
                   var langueChoisie = recupererValeurListe();
+                  globalCode = recupererValeurListe();          // Update the global variable 
                   console.log("Langue choisie : " + langueChoisie);
 
                 // Go to the "country" table to find the value of the codes according to the choice of language.
@@ -528,21 +534,36 @@ const genAI = new GoogleGenerativeAI("Your_API_KEY");
 
 // Fetch the prompt from the text file
 
-let prompt_1 = "";      // Variable to retrieve and use the prompt text
+let prompt_1 = "";      // Global variable to retrieve and use the prompt text
 
-fetch('prompt_frFRA.txt')       // .txt file wil change with language
-    .then(response => response.text())
-    .then(data => {
-        // 'data' est le contenu du fichier .txt sous forme de string
-        //document.getElementById('fileContent').textContent = data;
-        // console.log(data);
-        prompt_1 = data;
-    })
-    .catch((error) => {
-        console.error('Error with prompt text:', error);
-    });
+// Initialize the name of the text file containing the prompt, depending on the language.
+let prompt_xxXXX = "prompt_"+ mitCode + ".txt";
 
-// Send configuration prompt to AI
+// Load prompt to send to AI (and update language if necessary)
+function chargPrompt() {
+
+    prompt_xxXXX = "prompt_"+ mitCode + ".txt";           // Update prompt file name according to language
+    console.log("--> Fichier de prompt utilisé : " + prompt_xxXXX)
+
+        // prompt_frFRA.txt
+    fetch(prompt_xxXXX)       // .txt file wil change with language
+        .then(response => response.text())
+        .then(data => {
+            // 'data' est le contenu du fichier .txt sous forme de string
+            // document.getElementById('fileContent').textContent = data;
+            // console.log(data);
+            prompt_1 = data;       // Put the text contained in the file prompt_xxXXX.txt into the global variable "prompt_1".
+            console.log("prompt_1 mis à : " + prompt_1);
+        })
+        .catch((error) => {
+            console.error('Error with prompt text:', error);
+        });
+}
+
+chargPrompt();
+
+/*
+// Send configuration prompt to AI --> Now inactive  --> Without context: only one prompt
 async function conf_AI() {
     // For text-only input, use the gemini-pro model
     const model = genAI.getGenerativeModel({ model: "gemini-pro"});
@@ -556,16 +577,18 @@ async function conf_AI() {
     console.log("Réponse à la configuration : ", text);      // Gives me completely irrelevant text !!!
 }
 
-// conf_AI();
+conf_AI();
+*/
 
 async function liste_to_AI(txt0) {
+
     // For text-only input, use the gemini-pro model
     const model = genAI.getGenerativeModel({ model: "gemini-pro"});
 
     // Planned : Export the prompt to a separate file and eliminate line breaks
-    const prompt = prompt_1 + txt0
-    console.log("Prompt envoyé : ", prompt)
-    const result = await model.generateContent(prompt);
+    const promptToSend = prompt_1 + txt0
+    console.log("Prompt envoyé : ", promptToSend)
+    const result = await model.generateContent(promptToSend);
     const response = await result.response;
     const text = response.text();
     // console.log(text);
@@ -578,9 +601,12 @@ async function liste_to_AI(txt0) {
 let text_IA = "";
 
 async function direPhrase() {
-   let textGenere = document.getElementById('text-genere');
 
-   generList().then(async text => {
+    chargPrompt();          // Charger le fichier prompt en fonction de la langue en cours
+
+    let textGenere = document.getElementById('text-genere');
+
+    generList().then(async text => {
 
        text_IA = await liste_to_AI(text);
 
