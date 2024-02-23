@@ -8,9 +8,9 @@ Para cada lista de palabras, deberá :
 - utilizar TODAS las palabras que se le dan,
 - respetar el ORDEN de las palabras,
 
-Si un sustantivo sólo aparece una vez, utilízalo en la abreviatura. Ejemplo [une fille,ceuillir,une fleur] Generará la frase: "Une fille vueille une fleur.
-poner un sustantivo dos veces seguidas en plural. Ejemplo: [un chat,un chat,miauler] Generarás la frase: "Des chats miaulent.
-Ponga un sustantivo (y su determinante) en plural si va precedido de un número. Ejemplo: [quatre,un chat,miauler] Generarás la frase: "Quatre chats miaulent".
+Pluraliza un sustantivo varias veces seguidas: utiliza sólo los determinantes "unos" o "los" (no "dos" o "tres"). Ejemplo [un gato,un gato,miau] Generará la frase: "Unos gatos maúllan.".
+
+Ponga un sustantivo (y su determinante) en plural si va precedido de un número. Ejemplo: [cuatro, un gato, maullar] Generarás la frase: "Cuatro gatos maúllan.".
 
 Libertades:
 Cuando sea necesario, para obtener una frase correcta, puedes añadir o modificar pequeñas palabras como : 

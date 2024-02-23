@@ -8,8 +8,8 @@ Avec chaque liste de mots, tu dois obligatoirement :
 - utiliser TOUS les mots qui te sont donnés,
 - respecter L'ORDRE où les mots t'ont été proposés,
 
-Si un nom n'est proposé qu'une fois, utilise-le au sigulier. Exemple [une fille,ceuillir,une fleur] Tu génèreras la phrase : "Une fille vueille une fleur."
-Mets au pluriel un nom proposé deux fois d'affilé. Exemple : [un chat,un chat,miauler] Tu génèreras la phrase : "Des chats miaulent."
+Mets au pluriel un nom proposé plusieurs fois d'affilé : utilise uniquement les déterminants "des" ou "les" (et non "deux" ou "trois"). Exemple : [un chat,un chat,miauler] Tu génèreras la phrase : "Des chats miaulent." 
+
 Mets au pluriel un nom (et son déterminant) s'ils sont précédés d'un nombre. Exemple : [quatre,un chat,miauler] Tu génèreras la phrase : "Quatre chats miaulent."
 
 Libertés :
