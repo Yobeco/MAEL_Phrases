@@ -14,6 +14,26 @@ Sortable.create(containerImg, {
 	animation: 250,
 	easing: "cubic-bezier(0.34, 1.56, 0.64, 1)",  // https://easings.net/#easeOutBack
 	sort: false, // disable reorganization
+
+
+    // Ajouter l'écouteur d'événement au nouvel élément cloné
+	onClone: function (evt) {
+		// Retrieve the cloned element's data-id
+  		const dataId = evt.clone.dataset.id;
+
+  		// Retrieve the cloned element's data-theme
+  		const dataTheme = evt.clone.dataset.theme;
+
+  		// Retrieve the cloned element's data-json
+  		const dataJson = evt.clone.dataset.json;
+
+		evt.clone.addEventListener('click', () => {
+			// direMot(categ_id, data[valeurSelectionnee].theme, data[valeurSelectionnee].cartes[i].id);
+			direMot(dataJson, dataTheme, dataId);
+			// console.log("La catégorie : " + categ_id);
+		});
+	}
+
 });
 
 

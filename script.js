@@ -6,6 +6,38 @@ let globalCode = "FR";   // Golbal variable for <select>
 let mitCode = "frFRA";   // Language code used by MAEL gen/Scan and in JSON (MIT Appinventor)
 let ssuCode = "fr-FR";   // Language code used by SpeechSynthesisUtterance()
 
+// #########################################################################################################
+
+// Function to be called by new_image.addEventListener();
+// --> Say the word corresponding to the clicked image
+function direMot(json, theme, id){
+    // console.log("JSON :" + json + " Thème :" + theme + " ID :" + id);
+    // Create a temporary list containing the info needed to retrieve the translation
+    let jsonFileURL = "Catalogues/" + json + "/" + json + ".json";
+
+    // tradFromId(val_JSON, val_theme, val_id_carte, val_langue)
+    tradFromId(jsonFileURL, theme, id, mitCode).then(result => {
+        console.log("L'id : '" + id + "' --> Le mot : '" + result[0] +"'.");
+        
+        let parole = new SpeechSynthesisUtterance();
+        parole.lang = ssuCode;     // Language coding: "BCP 47" (Obsolete?)
+
+        parole.text = result[0];   // 0: word , 1: picture's URL
+        parole.pitch = 1;    // 1 - 2
+        parole.rate = 1;     // 0.5 - 2
+        parole.volume = 1;   // 0 - 1 
+
+        speechSynthesis.speak(parole);
+        console.log("Le mot '" + result[0] + "' a été prononcé.");
+    });
+};
+
+// Make direMot() global for access from options.js
+window.direMot = direMot;
+
+// #########################################################################################################
+
+
 // ==>  Tab and cards (pictures) refresh function  <==
 
 function actuCorps(dossier, categ_id){
@@ -259,7 +291,7 @@ function actuCorps(dossier, categ_id){
                     new_image.addEventListener("mouseenter", function() {
                         // Modify the class to activate the CSS hover style
                         new_image.style.border = coul_theme_img;
-                    });
+                    }); // Add a mouse-over event handler
 
                     new_image.addEventListener("mouseleave", function() {
                         // Return to white border when mouse leaves image
@@ -271,30 +303,6 @@ function actuCorps(dossier, categ_id){
 
                 };
 
-                // #########################################################################################################
-
-                // Function to be called by new_image.addEventListener();
-                // --> Say the word corresponding to the clicked image
-                function direMot(json, theme, id){
-                    // console.log("JSON :" + json + " Thème :" + theme + " ID :" + id);
-                    // Create a temporary list containing the info needed to retrieve the translation
-                    let jsonFileURL = "Catalogues/" + json + "/" + json + ".json";
-
-                    // tradFromId(val_JSON, val_theme, val_id_carte, val_langue)
-                    tradFromId(jsonFileURL, theme, id, mitCode).then(result => {
-                        console.log(result[0]);
-                        
-                        let parole = new SpeechSynthesisUtterance();
-                        parole.lang = ssuCode;     // Language coding: "BCP 47" (Obsolete?)
-
-                        parole.text = result[0];   // 0: word , 1: picture's URL
-                        parole.pitch = 1;    // 1 - 2
-                        parole.rate = 1;     // 0.5 - 2
-                        parole.volume = 1;   // 0 - 1 
-
-                        speechSynthesis.speak(parole);
-                    });
-                };
             };
 
             afficheIMG(0);   // To initialize the display with theme 0
@@ -530,7 +538,7 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 
 // Access your API key (see "Set up your API key" above)
 // https://ai.google.dev/tutorials/web_quickstart?hl=fr#set-up-project
-const genAI = new GoogleGenerativeAI("Your_API_KEY");
+const genAI = new GoogleGenerativeAI("Your_API_Key");
 
 // Fetch the prompt from the text file
 
@@ -562,23 +570,6 @@ function chargPrompt() {
 
 chargPrompt();
 
-/*
-// Send configuration prompt to AI --> Now inactive  --> Without context: only one prompt
-async function conf_AI() {
-    // For text-only input, use the gemini-pro model
-    const model = genAI.getGenerativeModel({ model: "gemini-pro"});
-
-    const prompt = prompt_1
-
-    const result = await model.generateContent(prompt);
-    const response = await result.response;
-    const text = response.text();
-    console.log("IA configurée");
-    console.log("Réponse à la configuration : ", text);      // Gives me completely irrelevant text !!!
-}
-
-conf_AI();
-*/
 
 async function liste_to_AI(txt0) {
 
