@@ -538,7 +538,7 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 
 // Access your API key (see "Set up your API key" above)
 // https://ai.google.dev/tutorials/web_quickstart?hl=fr#set-up-project
-const genAI = new GoogleGenerativeAI("Your_API_Key");
+const genAI = new GoogleGenerativeAI("************************************");
 
 // Fetch the prompt from the text file
 
