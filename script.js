@@ -244,7 +244,7 @@ function actuCorps(dossier, categ_id){
 
                 // Retrieve the value selected by the user.
                 let valeurSelectionnee = theme_id;
-                console.log("Thème cliqué : ", theme_id);
+                // console.log("Thème cliqué : ", theme_id);
 
                 // Target the division where to display images with the "container-img" id
                 let conteneurIMG = document.getElementById("container-img");
@@ -568,7 +568,7 @@ function chargPrompt() {
     console.log("--> Fichier de prompt utilisé : " + prompt_xxXXX)
 
         // prompt_frFRA.txt
-    fetch(prompt_xxXXX)       // .txt file wil change with language
+    fetch(prompt_xxXXX)       // .txt file will change with language
         .then(response => response.text())
         .then(data => {
             // 'data' est le contenu du fichier .txt sous forme de string
@@ -582,15 +582,15 @@ function chargPrompt() {
         });
 }
 
-chargPrompt();
+// chargPrompt();
 
-
+// Envoyer le prompt dans la bonne langue suivi de la liste de mots
 async function liste_to_AI(txt0) {
 
     // For text-only input, use the gemini-pro model
     const model = genAI.getGenerativeModel({ model: "gemini-pro"});
 
-    const promptToSend = prompt_1 + txt0
+    const promptToSend = prompt_1 + txt0           // Ajouter la liste de mots à la fin du prompt
     console.log("Prompt envoyé : ", promptToSend)
     const result = await model.generateContent(promptToSend);
     const response = await result.response;
@@ -606,18 +606,17 @@ async function liste_to_AI(txt0) {
 let text_IA = "";
 
 // Fonction lancée au clic sur le bouton id="dire"
-
 async function direPhrase() {
+    console.log("La fonction direPhrase() a été activée");
+    chargPrompt();          // Charger le fichier prompt dans la variable (globale) prompt_1, en fonction de la langue du contexte
 
-    chargPrompt();          // Charger le fichier prompt en fonction de la langue en cours
+    let textGenere = document.getElementById('text-genere');      // Cibler la division où afficher la phrase qui sera générée
 
-    let textGenere = document.getElementById('text-genere');
+    generList().then(async text => {            // Récupérer la liste "text" de mots générée par l'utilisateur
 
-    generList().then(async text => {
+       text_IA = await liste_to_AI(text);       // Quant elle est arrivée, mettre dans text_IA la phrase reçue de l'AI
 
-       text_IA = await liste_to_AI(text);
-
-       console.log("text_IA : " + text_IA)
+       console.log("text_IA : " + text_IA);
 
        // Put the text generated in the <div>
        textGenere.innerHTML = text_IA;
@@ -630,7 +629,7 @@ async function direPhrase() {
 
        // Configure object :
        parole.lang = ssuCode;             // Current language
-       parole.text = text_IA;                // What the generList() promise returns after resolution. Wil be send to IA instead of SpeechSynthesis 
+       parole.text = text_IA;             // What the generList() promise returns after resolution. Wil be send to IA instead of SpeechSynthesis 
        parole.pitch = 1;                  // 1 - 2
        parole.rate = 1;                   // 0.5 - 2
        parole.volume = 1;                 // 0 - 1 
