@@ -1,3 +1,15 @@
+//      MAEL V0.5
+//      Objectifs de la version :
+//      Supprimer le bug : 
+//      Parfois MAEL ne respecte pas le changement de langue :
+//      La liste de mots dans la nouvelle langue n'est pas renvoyée à la suite du prompt,
+//      MAEL reste donc sur l'ancienne liste de mots qui n'est plus dans la bonne langue.
+
+
+// Utiliser "live-server" de node.js pour rendre possible "fetch()"
+
+// #########################################################################################################
+
 // Import the function responsible for finding word translations in JSON files
 import { tradFromId } from './json_search.js';
 
@@ -364,9 +376,11 @@ function actuCatalog(){
             data.forEach(obj => {
                 // |======> Create a <div> object that will be the vertical tab of the workbook <=======|
 
+                /*
                 if (obj.titre) { 
                     console.log("Catalogue présent : ", obj.titre);
                 }
+                */
 
                 let new_ongletCat = document.createElement("div");
                 new_ongletCat.type = "div";
@@ -429,7 +443,7 @@ function actuCatalog(){
 
         // Put all the objects of the "bouton_cat" class in an array variable: "onglet_categ".
         let onglet_categ = document.querySelectorAll(".bouton_cat");
-        console.log("openTabCatego lancée :", onglet_categ[1].classList)
+        // console.log("openTabCatego lancée :", onglet_categ[1].classList)
         
         // Remove the "active" class from all buttons
         for(let i = 0 ; i < onglet_categ.length; i++){
@@ -538,7 +552,7 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 
 // Access your API key (see "Set up your API key" above)
 // https://ai.google.dev/tutorials/web_quickstart?hl=fr#set-up-project
-const genAI = new GoogleGenerativeAI("************************************");
+const genAI = new GoogleGenerativeAI("AIzaSyAZcOhtqSZQ0pc-R9MnnvWeMcXXUhhmXSE");
 
 // Fetch the prompt from the text file
 
@@ -576,7 +590,6 @@ async function liste_to_AI(txt0) {
     // For text-only input, use the gemini-pro model
     const model = genAI.getGenerativeModel({ model: "gemini-pro"});
 
-    // Planned : Export the prompt to a separate file and eliminate line breaks
     const promptToSend = prompt_1 + txt0
     console.log("Prompt envoyé : ", promptToSend)
     const result = await model.generateContent(promptToSend);
@@ -589,7 +602,10 @@ async function liste_to_AI(txt0) {
 
 // ##################################################################
 
+// Variable recevant la phrase générée par l'IA
 let text_IA = "";
+
+// Fonction lancée au clic sur le bouton id="dire"
 
 async function direPhrase() {
 
@@ -601,11 +617,12 @@ async function direPhrase() {
 
        text_IA = await liste_to_AI(text);
 
-       console.log(text_IA)
+       console.log("text_IA : " + text_IA)
 
        // Put the text generated in the <div>
        textGenere.innerHTML = text_IA;
        console.log("Lancement de la synthèse vocale...");
+       console.log("################   BOUTON 'dire' CLIQUÉ   ####################");
 
        // Creating a synthetic voice object - 
        // SpeechSynthesisUtterance is provisional: quality is only good with Chrome
