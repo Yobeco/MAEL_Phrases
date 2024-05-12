@@ -20,6 +20,15 @@ let ssuCode = "fr-FR";   // Language code used by SpeechSynthesisUtterance()
 
 // #########################################################################################################
 
+// Pour réduire l'affichage de certaiens données
+function truncate(str, maxlength) {
+  return (str.length > maxlength) ?
+    str.slice(0, maxlength - 1) + '…' : str;
+}
+
+// #########################################################################################################
+
+
 // Function to be called by new_image.addEventListener();
 // --> Say the word corresponding to the clicked image
 function direMot(json, theme, id){
@@ -556,7 +565,7 @@ const genAI = new GoogleGenerativeAI("AIzaSyAZcOhtqSZQ0pc-R9MnnvWeMcXXUhhmXSE");
 
 // Fetch the prompt from the text file
 
-let prompt_1 = "";      // Global variable to retrieve and use the prompt text
+let promptAI = "";      // Global variable to retrieve and use the prompt text
 
 // Initialize the name of the text file containing the prompt, depending on the language.
 let prompt_xxXXX = "prompt_"+ mitCode + ".txt";
@@ -570,8 +579,8 @@ async function chargPrompt() {
     try {
         const response = await fetch(prompt_xxXXX);
         const data = await response.text();
-        prompt_1 = data;
-        console.log("prompt_1 mis à : " + prompt_1);
+        promptAI = data;
+        console.log("promptAI mis à : " + truncate(promptAI, 120));     // Afficher les 100 1ers charactères
     } catch (error) {
         console.error('Error with prompt text:', error);
     }
@@ -587,8 +596,8 @@ async function liste_to_AI(txt0) {
     // For text-only input, use the gemini-pro model
     const model = genAI.getGenerativeModel({ model: "gemini-pro"});
 
-    const promptToSend = prompt_1 + txt0           // Ajouter la liste de mots à la fin du prompt
-    console.log("Prompt envoyé : ", promptToSend)
+    const promptToSend = promptAI + txt0           // Ajouter la liste de mots à la fin du prompt
+    console.log("Prompt ENVOYÉ : ", promptToSend)
     const result = await model.generateContent(promptToSend);
     const response = await result.response;
     const text = response.text();
@@ -605,7 +614,7 @@ let text_IA = "";
 // Fonction lancée au clic sur le bouton id="dire"
 async function direPhrase() {
     console.log("La fonction direPhrase() a été activée");
-    chargPrompt();          // Charger le fichier prompt dans la variable (globale) prompt_1, en fonction de la langue du contexte
+    chargPrompt();          // Charger le fichier prompt dans la variable (globale) promptAI, en fonction de la langue du contexte
 
     let textGenere = document.getElementById('text-genere');      // Cibler la division où afficher la phrase qui sera générée
 
