@@ -562,24 +562,19 @@ let prompt_1 = "";      // Global variable to retrieve and use the prompt text
 let prompt_xxXXX = "prompt_"+ mitCode + ".txt";
 
 // Load prompt to send to AI (and update language if necessary)
-function chargPrompt() {
+async function chargPrompt() {
 
     prompt_xxXXX = "prompt_"+ mitCode + ".txt";           // Update prompt file name according to language
-    console.log("--> Fichier de prompt utilisé : " + prompt_xxXXX)
+    console.log("--> Fichier de prompt utilisé : " + prompt_xxXXX);
 
-        // prompt_frFRA.txt
-    fetch(prompt_xxXXX)       // .txt file will change with language
-        .then(response => response.text())
-        .then(data => {
-            // 'data' est le contenu du fichier .txt sous forme de string
-            // document.getElementById('fileContent').textContent = data;
-            // console.log(data);
-            prompt_1 = data;       // Put the text contained in the file prompt_xxXXX.txt into the global variable "prompt_1".
-            console.log("prompt_1 mis à : " + prompt_1);
-        })
-        .catch((error) => {
-            console.error('Error with prompt text:', error);
-        });
+    try {
+        const response = await fetch(prompt_xxXXX);
+        const data = await response.text();
+        prompt_1 = data;
+        console.log("prompt_1 mis à : " + prompt_1);
+    } catch (error) {
+        console.error('Error with prompt text:', error);
+    }
 }
 
 // chargPrompt();
@@ -587,6 +582,8 @@ function chargPrompt() {
 // Envoyer le prompt dans la bonne langue suivi de la liste de mots
 async function liste_to_AI(txt0) {
 
+    await chargPrompt();
+    
     // For text-only input, use the gemini-pro model
     const model = genAI.getGenerativeModel({ model: "gemini-pro"});
 
