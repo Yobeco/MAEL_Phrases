@@ -72,6 +72,8 @@ Les élèves se connectant pourront faire les activités en toute autonomie.
 1. Quand la phrase été reçue par **MAEL Phrases**, elle est affichée à droite du bouton "bouche".
 1. La même phrase est envoyée à la voix de synthèse :speaking_head: du navigateur.
 
+**MAEL Phrase** Utiliser en [**back end en Kotlin**](https://github.com/Yobeco/MAEL_Backend) <img src="https://cdn.simpleicons.org/kotlin/FFFF" width="24" height="24" style="vertical-align: middle;" /> (déjà commencé, mais à l'arrêt... :disappointed:) pour accéder à sa base de données en PostgresSQL <img src="https://cdn.simpleicons.org/postgresql/FFFF" width="24" height="24" style="vertical-align: middle;" />.
+
 ---
 
 ## E- Fonctionnalités à développer :rocket:
