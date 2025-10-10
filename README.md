@@ -1,4 +1,4 @@
-![MAEL](https://github.com/Yobeco/MAEL_Phono_fouille/blob/main/readme_assets/Logo-MAEL-120.png "Logo du projet MAEL")
+![MAEL](./readme_assets/Logo-MAEL-120.png "Logo du projet MAEL")
 
 # MAEL Phrases
 
@@ -15,7 +15,7 @@ Copyright (c) 2023 Yonnel Bécognée
 
 [![Status: Active](https://img.shields.io/badge/status-active-009900.svg)]()
 
-## :fr: [Français](https://github.com/Yobeco/MAEL_Scan) | :gb: English
+## :fr: [Français](https://github.com/Yobeco/MAEL_Phrases) | :gb: English
 
 ---
 
@@ -76,37 +76,47 @@ Les élèves se connectant pourront faire les activités en toute autonomie.
 
 ## E- Fonctionnalités à développer :rocket:
 
-1- Créer une plateforme qui permette au porfesseur de faire des comptes pour gérer ses classes et ses élèves avec :
+### 1- Créer une plateforme qui permette au porfesseur de faire des comptes pour gérer ses classes et ses élèves avec :
 - son propre hébergement,
 - son propre Cloud <img src="https://cdn.simpleicons.org/nextcloud/FFFF" width="24" height="24" style="vertical-align: middle;" /> (pour héberger les fichier mp3 utilisés par **MAEl Gen** et **MAEl Scan**,
 - sa propre AI <img src="https://cdn.simpleicons.org/mistralai/FFFF" width="24" height="24" style="vertical-align: middle;" /> avec API,
 - son propre service de voix de synthèse :speaking_head: avec API,
 - son prore moteur de recherche de mots :mag_right: (inspiré de [Phonofouille](https://github.com/Yobeco/MAEL_Phonofouille)).
 
-2- Créer une base de données PostgresSQL <img src="https://cdn.simpleicons.org/postgresql/FFFF" width="24" height="24" style="vertical-align: middle;" /> (derrière un backend Kotlin <img src="https://cdn.simpleicons.org/kotlin/FFFF" width="24" height="24" style="vertical-align: middle;" />) pour :
-- gérer les comptes des professeurs et des élèves :bust_in_silhouette:.
-- gérer les bibliothèques de mots et d'images :books:.
+### 2- Créer une base de données PostgresSQL <img src="https://cdn.simpleicons.org/postgresql/FFFF" width="24" height="24" style="vertical-align: middle;" /> (derrière un backend Kotlin <img src="https://cdn.simpleicons.org/kotlin/FFFF" width="24" height="24" style="vertical-align: middle;" />) pour :
+- Gérer les comptes des professeurs et des élèves :bust_in_silhouette:.
+- Gérer les bibliothèques de mots et d'images :books:.
+- Gérer les activités créées
 
-3- Permettre au professeur :
-- de créer des groupes d'élèves :busts_in_silhouette: (par classe, par besoins, par ateliers...),
-- d'utiliser les bibliothèques de mots proposées par défault,
-- de créer ses propres bibliothèques de mots :bookmark_tabs:,
-- de partager :left_right_arrow: ses bibliothèques de mots,
-- de créer / partager ses propres activités,
-- de proposer des activités aux élèves de manière différentiée :1234: selon les groupes d'élèves ou même de manière individuelle :compass:,
-- de voir les productions et l'évolution de ses élèves :eyes:,
-- de proposer de nouvelles activités en fonction des ces résultats :new: ...
-- de former une nouvelle classe avec les comptes d'élèves déjà enregistrés l'année d'avant :scroll:.
+### 3- Permettre au professeur de gérer ses élèves et activités
+- Créer des groupes d'élèves :busts_in_silhouette: (par classe, par besoins, par ateliers...),
+- Utiliser les bibliothèques de mots proposées par défault,
+- Créer ses propres bibliothèques de mots :bookmark_tabs:,
+- Partager :left_right_arrow: ses bibliothèques de mots,
+- Créer / partager ses propres activités,
+- Proposer des activités aux élèves de manière différentiée :1234: selon les groupes d'élèves ou même de manière individuelle :compass:,
+- Voir les productions et l'évolution de ses élèves :eyes:,
+- Proposer de nouvelles activités en fonction des ces résultats :new: ...
+- Former une nouvelle classe avec les comptes d'élèves déjà enregistrés l'année d'avant :scroll:.
 
-4- Permettre à l'élève :
-- d'entrer de manière sécurisée sur la plateforme avec son compte :heavy_check_mark:,
-- de faire les activités proposées par son professeur :computer:,
-- d'accéder une une zone d'activité libre :grinning: (bac à sable),
-- de voir de manière graphique mais simple ses progrès :chart_with_upwards_trend:.
+### 4- Permettre à l'élève de pariciper
+- Entrer de manière sécurisée sur la plateforme avec son compte :heavy_check_mark:,
+- Faire les activités proposées par son professeur :computer:,
+- Accéder une une zone d'activité libre :grinning: (bac à sable),
+- Voir de manière graphique mais simple ses progrès :chart_with_upwards_trend:.
 
+### 5- Créer une bibliothèque d'images
+
+- Pour illustrer la [base de donnée Minilex](./readme_assets/Minima _Lexical_C1fev25.pdf) (Créée par AMLA Nord)
+- Nous avons besoin d'illustrations de ce type : 
+    - logeant dans un format carré
+    - avec fond détouré
+    - au trait noir simple (colorisable par la suite)
+    - très évocateur
+
+![Images d'exemple](./readme_assets/Images_exemples.png)
 
 ### :+1: Proposez votre aide au développement de la plate forme MAEL ! :raised_hands:
-
 
 ---
 
@@ -120,12 +130,13 @@ Les élèves se connectant pourront faire les activités en toute autonomie.
 
 Un grand merci à toutes les personnes qui vont contribuer à ce projet !
 
- | Avatar | Nom                | GitHub                          | Rôle                     |
- |--------|--------------------|---------------------------------|--------------------------|
- | ![Bécognée Yonnel](https://github.com/Yobeco.png?size=50) | Bécognée Yonnel | [@Yobeco](https://github.com/Yobeco) | Mainteneur |
- | ... | ... | ... | Développeur |
- | ... | ... | ... | Développeuse |
- | ... | ... | ... | Traductrice |
+| Avatar | Nom                | GitHub                          | Rôle                     |
+|--------|--------------------|---------------------------------|--------------------------|
+| ![Bécognée Yonnel](https://github.com/Yobeco.png?size=50) | Bécognée Yonnel | [@Yobeco](https://github.com/Yobeco) | Mainteneur |
+| ... | ... | ... | Développeur |
+| ... | ... | ... | Développeuse |
+| ... | ... | ... | Illustrateur (trice) |
+| ... | ... | ... | Traductrice |
 
 ---
 
