@@ -76,31 +76,36 @@ Les élèves se connectant pourront faire ces activités en toute autonomie.
 
 ## E- Fonctionnalités à développer :rocket:
 
-1- Créer une plateforme qui permette au porfesseurs de faire des comptes de classes pour gérer ses classes et ses élèves.
+1- Créer une plateforme qui permette au porfesseur de faire des comptes pour gérer ses classes et ses élèves avec :
+- son propre hébergement,
+- son propre Cloud <img src="https://cdn.simpleicons.org/nextcloud/FFFF" width="24" height="24" style="vertical-align: middle;" /> (pour héberger les fichier mp3 utilisés par **MAEl Gen** et **MAEl Scan**,
+- sa propre AI <img src="https://cdn.simpleicons.org/mistralai/FFFF" width="24" height="24" style="vertical-align: middle;" /> avec API,
+- son propre service de voix de synthèse :speaking_head: avec API,
+- son prore moteur de recherche de mots :mag_right: (inspiré de [Phonofouille](https://github.com/Yobeco/MAEL_Phonofouille)).
 
-2- Créer une base de données PostgresSQL (derrière un backend Kotlin) pour :
-- gérer les comptes des professeurs et des élèves.
-- gérer les bibliothèques de mots et d'images.
+2- Créer une base de données PostgresSQL <img src="https://cdn.simpleicons.org/postgresql/FFFF" width="24" height="24" style="vertical-align: middle;" /> (derrière un backend Kotlin <img src="https://cdn.simpleicons.org/kotlin/FFFF" width="24" height="24" style="vertical-align: middle;" />) pour :
+- gérer les comptes des professeurs et des élèves :bust_in_silhouette:.
+- gérer les bibliothèques de mots et d'images :books:.
 
 3- Permettre au professeur :
-- de créer des groupes d'élèves (par classe, par besoins, par ateliers...),
+- de créer des groupes d'élèves :busts_in_silhouette: (par classe, par besoins, par ateliers...),
 - d'utiliser les bibliothèques de mots proposées par défault,
-- de créer ses propres bibliothèques de mots,
-- de partager ses bibliothèques de mots,
+- de créer ses propres bibliothèques de mots :bookmark_tabs:,
+- de partager :left_right_arrow: ses bibliothèques de mots,
 - de créer / partager ses propres activités,
-- de proposer des activités aux élèves de manière différentiée selon les groupes d'élèves ou même de manière individuelle,
-- de voir les productions et l'évolution de ses élèves,
-- de proposer de nouvelles activités en fonction des ces résultats...
-- de former une nouvelle classe avec les comptes d'élèves déjà enregistrés l'année d'avant.
+- de proposer des activités aux élèves de manière différentiée :1234: selon les groupes d'élèves ou même de manière individuelle :compass:,
+- de voir les productions et l'évolution de ses élèves :eyes:,
+- de proposer de nouvelles activités en fonction des ces résultats :new: ...
+- de former une nouvelle classe avec les comptes d'élèves déjà enregistrés l'année d'avant :scroll:.
 
 4- Permettre à l'élève :
-- d'entrer de manière sécurisée sur la plateforme avec son compte,
-- de faire les activités proposées par son professeur,
-- d'accéder une une zone d'activité libre (bac à sable),
-- de voir de manière graphique mais simple ses progrès.
+- d'entrer de manière sécurisée sur la plateforme avec son compte :heavy_check_mark:,
+- de faire les activités proposées par son professeur :computer:,
+- d'accéder une une zone d'activité libre :grinning: (bac à sable),
+- de voir de manière graphique mais simple ses progrès :chart_with_upwards_trend:.
 
 
-### :+1: Proposez votre aider pour developper une de ces fonctions
+### :+1: Proposez votre aide au développement de la plate forme MAEL ! :chart_with_upwards_trend:
 
 
 ---
@@ -124,9 +129,9 @@ Un grand merci à toutes les personnes qui vont contribuer à ce projet !
 
 ---
 
-## G- Installation :arrow_heading_down:
+## G- Essayez MAEL Phrases en ligne
 
-Seule la version Android <img src="https://cdn.simpleicons.org/android/FFFF" width="24" height="24" style="vertical-align: middle;" /> *MIT App Inventor* est fonctionnelle pour le moment.   
-:inbox_tray: Pour essayer **MAEL Scan** [Télécharger le fichier MAEL_Scan_V5_0.apk](https://raw.githubusercontent.com/Yobeco/MAEL_Scan/main/binary_exec/MAEL_Scan_V5_0.apk)
+Il s'agit d'une [**version alpha** de démonstration](https://yobeco.github.io/MAEL/index.html) qui utilise l'API de Gemini 2.5.
 
+Ce n'est pas une version de production, faites des éssais de manière modérée :raised_hand: afin de laisser tout le monde profiter des tokens disponibles.
 
