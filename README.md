@@ -9,7 +9,7 @@ Copyright (c) 2025 Yonnel Bécognée
 
 [![HTML](https://img.shields.io/badge/HTML-V5-E0E0E0?logo=html5&logoColor=FF8000)](https://html.spec.whatwg.org/multipage/) [![CSS](https://img.shields.io/badge/CSS-V4-E0E0E0?logo=css&logoColor=0080FF)]() [![JavaScript](https://img.shields.io/badge/JavaScript-ES2025-E0E0E0?logo=javascript&logoColor=FFE010)](https://www.javascript.com/) 
 
-[![PostgresSQL](https://img.shields.io/badge/PostgresSQL-V18-E0E0E0?logo=postgresql&logoColor=009999)](https://www.postgresql.fr/)
+[![PostgresSQL](https://img.shields.io/badge/PostgresSQL-V18-99FFF?logo=postgresql&logoColor=009999)](https://www.postgresql.fr/)
 
 [![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-009900.svg)](#contributing) [![Beginner friendly](https://img.shields.io/badge/Beginner%20friendly-FF8000)]()
 
