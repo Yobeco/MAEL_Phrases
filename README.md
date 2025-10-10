@@ -40,7 +40,7 @@ Son interface est conçue pour être utilisée par un enfant, dés 6 ans :baby:.
 **MAEL Phrases** est en version alpha. Il s'agit d'une démonstration de ce qui sera le coeur d'une plateforme pédagogiques permettant à l'enseignant de créer et de suivre la progression des activités sur mesure qu'il a créé pour ses élèves.   
 Les élèves se connectant pourront faire les activités en toute autonomie.
 
-- **Choix de 5 langues* (en haut à droite) :fr: :gb: :es: :brazil: :cn:
+- **Choix de 5 langues** (en haut à droite) :fr: :gb: :es: :brazil: :cn:
 - **Bibliothèque de test** répartie par nature des mots et par thèmes.
 - **Ligne de dépôt** pour y mettre les images choisies
 - **Bouton pour afficher la phrase correspondante**
