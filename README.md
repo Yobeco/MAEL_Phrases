@@ -24,10 +24,10 @@ Copyright (c) 2023 Yonnel Bécognée
 
 ## A- Description :eye:
 
-**MAEL Phrases** est une **application WEB** qui permet à l'élève de créer des phrases dans la langue qu'il est en train d'apprendre, en toute autonomie.   
+**MAEL Phrases** est une **application WEB** :globe_with_meridians: qui permet à l'élève de créer des phrases dans la langue qu'il est en train d'apprendre, en toute autonomie.   
 Son interface est conçue pour être utilisée par un enfant, dés 6 ans :baby:.   
 
-**MAEL Phrases** permet aux élèves ne possédant aucun "parlant" chez lui d'écouter et même de formuler des phrases dans la langue étudiée dans un contexte pédagogique élaboré par son professeur. Elle permet donc au professeur de **booster son enseignement d'une langue** :chart_with_upwards_trend:.
+**MAEL Phrases** permet aux élèves ne possédant aucun "parlant" chez lui d'écouter et même de formuler des phrases dans la langue étudiée dans un contexte pédagogique élaboré par son professeur. Elle permet donc au professeur de **booster son enseignement d'une langue** :100:
 
 **Potentiellement 55 langues sont implémentables !** :astonished:
 
@@ -38,9 +38,9 @@ Son interface est conçue pour être utilisée par un enfant, dés 6 ans :baby:.
 ## B- Fonctionnalités :clipboard:
 
 **MAEL Phrases** est en version alpha. Il s'agit d'une démonstration de ce qui sera le coeur d'une plateforme pédagogiques permettant à l'enseignant de créer et de suivre la progression des activités sur mesure qu'il a créé pour ses élèves.   
-Les élèves se connectant pourront faire ces activités en toute autonomie.
+Les élèves se connectant pourront faire les activités en toute autonomie.
 
-- **Choix de 5 langues* (en haut à droite)
+- **Choix de 5 langues* (en haut à droite) :fr: :gb: :es: :brazil: :cn:
 - **Bibliothèque de test** répartie par nature des mots et par thèmes.
 - **Ligne de dépôt** pour y mettre les images choisies
 - **Bouton pour afficher la phrase correspondante**
@@ -50,7 +50,7 @@ Les élèves se connectant pourront faire ces activités en toute autonomie.
 
 ## C- Comment utiliser MAEL Phrases ? :blush:
 
-:warning: Préférez Chrome. Malheureusement, la voix de FireFox n'est pas à la hauteur...
+:warning: Préférez Chrome <img src="https://cdn.simpleicons.org/googlechrome/FFFF" width="24" height="24" style="vertical-align: middle;" />. Malheureusement, la voix de FireFox <img src="https://cdn.simpleicons.org/firefox/FFFF" width="24" height="24" style="vertical-align: middle;" /> n'est pas à la hauteur...
 
 ---
 
@@ -65,12 +65,12 @@ Les élèves se connectant pourront faire ces activités en toute autonomie.
 
 ---
 
-1. Un bibliothèque (très frugale) d'images est générée à partir de fichiers JSON selon des catégories (Classes grammaticales ou thèmes). Il est prévu d'utiliser une basse de données PostgresSQL.
+1. Un bibliothèque (très frugale) d'images est générée à partir de fichiers JSON  <img src="https://cdn.simpleicons.org/json/FFFF" width="24" height="24" style="vertical-align: middle;" /> selon des catégories (Classes grammaticales ou thèmes). Il est prévu d'utiliser une basse de données PostgresSQL <img src="https://cdn.simpleicons.org/postgresql/FFFF" width="24" height="24" style="vertical-align: middle;" />.
 1. Quand ces mots sont déposé sur la ligne de dépôt, ils préparent une liste.
-1. Quand on appuie sur le bouton "bouche", la liste est envoyée à l'api D'une IA (Gemini 2.5 pour le moment)
-1. Une prompte demandant de créer la phrase la plus logique avec ces mots est créée dans la langue qui a été choisie (Français par défaut)
+1. Quand on appuie sur le bouton "bouche" :lips:, la liste est envoyée à l'API d'une IA (Gemini 2.5 <img src="https://cdn.simpleicons.org/googlegemini/FFFF" width="24" height="24" style="vertical-align: middle;" /> pour le moment)
+1. Une prompte demandant de créer la phrase la plus logique avec ces mots est créée dans la langue qui a été choisie (français :fr: par défaut)
 1. Quand la phrase été reçue par **MAEL Phrases**, elle est affichée à droite du bouton "bouche".
-1. La même phrase est envoyée à la voix de synthèse du navigateur.
+1. La même phrase est envoyée à la voix de synthèse :speaking_head: du navigateur.
 
 ---
 
