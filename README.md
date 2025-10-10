@@ -109,10 +109,10 @@ Les élèves se connectant pourront faire les activités en toute autonomie.
 
 - Pour illustrer la [base de donnée Minilex](./readme_assets/Minima _Lexical_C1fev25.pdf) (Créée par AMLA Nord)
 - Nous avons besoin d'illustrations de ce type : 
-    - logeant dans un format carré
-    - avec fond détouré
-    - au trait noir simple (colorisable par la suite)
-    - très évocateur
+    - logeant dans un format carré,
+    - avec fond détouré,
+    - au trait noir simple (colorisable par la suite),
+    - très évocatrice (faciles à comprendre pour les enfants),
 
 ![Images d'exemple](./readme_assets/Images_exemples.png)
 
