@@ -24,11 +24,10 @@ Copyright (c) 2023 Yonnel Bécognée
 
 ## A- Description :eye:
 
-**MAEL Scan** est une application pour téléphone portable :iphone: (bientôt, une version Raspberry  Pi <img src="https://cdn.simpleicons.org/raspberrypi/FFFF" width="24" height="24" style="vertical-align: middle;" />) qui permet à l'élève de flasher les code QR créés par son professeur avec **MAEL Gen** et d'écouter leur contenu :speaker:.   
-Son interface est conçue pour être utilisée par un enfant, dés 4 ans :baby:.   
-Elle ne comporte que 3 gros boutons par défaut.
+**MAEL Phrases** est une **application WEB** qui permet à l'élève de créer des phrases dans la langue qu'il est en train d'apprendre, en toute autonomie.   
+Son interface est conçue pour être utilisée par un enfant, dés 6 ans :baby:.   
 
-**MAEL Scan** permet aux élèves ne possédant aucun "parlant" chez lui d'écouter la langue étudiée dans un contexte pédagogique élaboré par son professeur. Elle permet donc au professeur de **booster son enseignement d'une langue** :chart_with_upwards_trend:.
+**MAEL Phrases** permet aux élèves ne possédant aucun "parlant" chez lui d'écouter et même de formuler des phrases dans la langue étudiée dans un contexte pédagogique élaboré par son professeur. Elle permet donc au professeur de **booster son enseignement d'une langue** :chart_with_upwards_trend:.
 
 **Potentiellement 55 langues sont implémentables !** :astonished:
 
@@ -38,72 +37,25 @@ Elle ne comporte que 3 gros boutons par défaut.
 
 ## B- Fonctionnalités :clipboard:
 
-- **Scanner** :speaker: : Lance le scan du code QR puis oralise son contenu.
-- **Écouter à nouveau** :curly_loop: : Permet de ré-écouter sans re-scanner.
-- **Écouter plus lentement** :snail: : Permet de ré-écouter sans re-scanner, mais de manière plus lente (ne fonctionne pas avec les mp3).
-- **Lecture "MP3"** :musical_note: : Lors du scan, si le lien point vers un fichier mp3, l'élève entendra ce fichier.
-- **Modes spéciaux** : Ce sont des bibliothèques de syllabes au format mp3 (intégrées dans MAEL Scan) car la lecture d'une syllabe unique est parfois de mauvaise qualité avec la voix de synthèse :unamused:. Il y a :
-    - les syllabes de l'abécédaire bilingue Consigny (en français et en espagnol)
-    - le syllabes de la méthode "Borel-Maisonny" (Syllabes très utilisées, associées à des gestes destinées à aider les enfants dysorthographiques)
+**MAEL Phrases** est en version alpha. Il s'agit d'une démonstration de ce qui sera le coeur d'une plateforme pédagogiques permettant à l'enseignant de créer et de suivre la progression des activités sur mesure qu'il a créé pour ses élèves.   
+Les élèves se connectant pourront faire ces activités en toute autonomie.
+
+- **Choix de 5 langues* (en haut à droite)
+- **Bibliothèque de test** répartie par nature des mots et par thèmes.
+- **Ligne de dépôt** pour y mettre les images choisies
+- **Bouton pour afficher la phrase correspondante**
+- **Oralisation de la phrase** par une voix de synthèse (Préférez Chrome. Malheureusement, la voix de FireFox n'est pas à la hauteur...)
 
 ---
 
-## C- Comment utiliser MAEL Scan ? :blush:
+## C- Comment utiliser MAEL Phrases ? :blush:
 
-:warning: Assurez-vous que vous avez [**installé la voix de synthèse**](./readme_assets/MAEL_Scan_tuto.pdf) correspondant la langue utilisée sur votre téléphone.   
-Pour ces exemples, installez la voix française :fr:.
-
----
-
-***⟶ L'élève ne sait pas ce que contient le code QR, il n'a qu'à le flasher.***
-
-1. **Lancez MAEL Scan**
-1. **Flasher un code QR généré par MAEL Gen depuis une texte.**
-
-Appuyez sur ce bouton :
-
-![Scan](./readme_assets/Scanner.png)
+:warning: Préférez Chrome. Malheureusement, la voix de FireFox n'est pas à la hauteur...
 
 ---
 
-### 1- Si le code QR contient du texte :spiral_notepad:
-
- |  | Exemple |  | Exemple |  | Exemple |
- |:--------:|--------------------|:--------:|--------------------|:--------:|--------------------|
- | Mode Lecture | ![Code QR de test](./readme_assets/test_text_lec.png) | Mode Dicter | ![Code QR de test](./readme_assets/test_text_dic.png) | Mode Épeler | ![Code QR de test](./readme_assets/test_text_epe.png) |
-
-1. **:speaker: Écouter le contenu du code QR.**
-
-1. **Ré-écouter**
-
-![Ré-écouter](./readme_assets/Reecouter.png)
-
-1. **Ré-écouter plus lentement**
-
-![Ré-écouter](./readme_assets/Lent.png)
-
-*⟶ L'élève entendra une voix de synthèse :speaking_head:*
-
----
-
-### 2- Si le code QR contient un lien vers un fichier MP3 :microphone:
-
-:sparkles: **[Comment mettre un .mp3 sur Google Drive](https://github.com/Yobeco/MAEL_Gen/blob/main/README.md#2--utiliser-un-fichier-mp3) <img src="https://cdn.simpleicons.org/googledrive/FFFF" width="24" height="24" style="vertical-align: middle;" />**
-
-<!-- Lien vers une page et un titre en particulier. Ne fonctionne pas si le titre contient un icône. Ne fonctionne pas dans tous les éditeurs-->
-
-![Code QR de test](./readme_assets/test_mp3.png)
-
-1. **:speaker: Écouter le fichier mp3.**
-1. **Ré-écouter**
-
-![Ré-écouter](./readme_assets/Reecouter.png)
-
-1. **Gérer la lecture du fichier**
-
-![Play](./readme_assets/Play.png) ![Pause](./readme_assets/Pause.png) ![Stop](./readme_assets/Stop.png)
-
-*⟶ L'élève entendra le fichier .mp3. :musical_note:*
+1. **Glissez / déposez** des images provenant de la bibliothèque en suivant la logique d'une phrase
+1. **Appuyeez sur le boutton "bouche"** pour oraliser votre phrase.
 
 ---
 
@@ -113,66 +65,40 @@ Appuyez sur ce bouton :
 
 ---
 
-1. **MAEL Scan** scanne un code QR
-1. Il **décrypte** le contenu du code QR (Algorithme déjà écrit en Kotlin :+1:).
-1. Il extrait le **préfixe** et le **suffixe** avec les [**regex**](https://en.wikipedia.org/wiki/Regular_expression).
-1. Il en déduit la **langue**, le **pays** et le **mode** (ou si c'est un **mp3**).
-1. Il configure :gear: le module de **synthèse vocale** du téléphone selon la langue et le pays (ou choisit le module de lecture mp3)
-1. Il configure :gear: le mode (Lecture / Cacher / Dicter / Éperler) et oralise :speaking_head: le texte comme demandé. 
-1. Si c'est un mode spécial , il va chercher l'audio correspondant (intégré à l'appli) :outbox_tray:.
-
-[Document complémentaire](./readme_assets/MAEL_Scan-Pseudo_code_Kotlin.pdf) :spiral_notepad:
-
->*Annecdote* : la version *MIT App Inventor* ne possède pas les fonctions nécessaires pour décrypter le contenu du code QR. J'ai dû écrire l'algorithme en JavaScript pour l'intégrer dans une page web utlisée par le module **Web** de *MIT App Inventor*.  
-Quel détour !!! :grimacing:   
-⟶ Une autre raison de la migration vers Kotlin <img src="https://cdn.simpleicons.org/kotlin/FFFF" width="24" height="24" style="vertical-align: middle;" />.
+1. Un bibliothèque (très frugale) d'images est générée à partir de fichiers JSON selon des catégories (Classes grammaticales ou thèmes). Il est prévu d'utiliser une basse de données PostgresSQL.
+1. Quand ces mots sont déposé sur la ligne de dépôt, ils préparent une liste.
+1. Quand on appuie sur le bouton "bouche", la liste est envoyée à l'api D'une IA (Gemini 2.5 pour le moment)
+1. Une prompte demandant de créer la phrase la plus logique avec ces mots est créée dans la langue qui a été choisie (Français par défaut)
+1. Quand la phrase été reçue par **MAEL Phrases**, elle est affichée à droite du bouton "bouche".
+1. La même phrase est envoyée à la voix de synthèse du navigateur.
 
 ---
 
 ## E- Fonctionnalités à développer :rocket:
 
-1- **Mode "dicter"**
+1- Créer une plateforme qui permette au porfesseurs de faire des comptes de classes pour gérer ses classes et ses élèves.
 
-- Le _mode dicter_ actuel (oraliser le texte mais ne pas l'afficher) va changer de nom et s'appeler **"Mode cacher"**. :arrows_counterclockwise:
+2- Créer une base de données PostgresSQL (derrière un backend Kotlin) pour :
+- gérer les comptes des professeurs et des élèves.
+- gérer les bibliothèques de mots et d'images.
 
-- Le nouveau _mode dicter_ aura :
+3- Permettre au professeur :
+- de créer des groupes d'élèves (par classe, par besoins, par ateliers...),
+- d'utiliser les bibliothèques de mots proposées par défault,
+- de créer ses propres bibliothèques de mots,
+- de partager ses bibliothèques de mots,
+- de créer / partager ses propres activités,
+- de proposer des activités aux élèves de manière différentiée selon les groupes d'élèves ou même de manière individuelle,
+- de voir les productions et l'évolution de ses élèves,
+- de proposer de nouvelles activités en fonction des ces résultats...
+- de former une nouvelle classe avec les comptes d'élèves déjà enregistrés l'année d'avant.
 
-    - la lecture du texte, mais pas son affichage,
-    - l'oralisation de la ponctuation et
-    - l'affichage du menu lecture-pause (avec barre de défilement). :play_or_pause_button:
+4- Permettre à l'élève :
+- d'entrer de manière sécurisée sur la plateforme avec son compte,
+- de faire les activités proposées par son professeur,
+- d'accéder une une zone d'activité libre (bac à sable),
+- de voir de manière graphique mais simple ses progrès.
 
-2- **Mode "MP3"**
-
-- Création d'un **MAEL Cloud** :cloud: avec moins de limitations que Google Drive. (hébergé avec la plateforme **MAEL Phrase**).
-- Ajout d'une option (suffixe) qui indiquera à **MAEL Scan** qu'il doit conserver le fichier :inbox_tray: pour ne pas à avoir à le re-télécharger s'il est scanné à nouveau.
-
-3- **Mode "épeler"**
-
-*Explication péralable :*   
-Pour épeler un texte, **MAEL Scan** contient une structure de données contenant les correspondances entre les lettres et ce qu'il doit dire.
-
-*Exemples :*
-
- | Lettre | Ce qui sera prononcé |
- |:--------:|--------------------|
- | A | a majuscule |
- | a | a |
- | é | e accent aigü |
- | ç | c cédille |
-
-Cette base de données est très spécifique à chaque langue.
-Dans la version *MIT App Inventor* de **MAEL Scan**, ces informations sont stoquées dans une variable de type `dictionnaire` qui prend la forme d'un **immense immeuble :office: de petits blocs** difficile à afficher (et donc à gérer).  
-Il parait très compliqué de créer 55 dictionnaires de ce type :face_with_spiral_eyes:, c'est un des facteurs limitant de *MIT App Inventor* et donc une des raisons du passage à Kotlin MP <img src="https://cdn.simpleicons.org/kotlin/FFFF" width="24" height="24" style="vertical-align: middle;" />.
-
-1- **Implémentation d'une base de données SQLite <img src="https://cdn.simpleicons.org/sqlite/FFFF" width="24" height="24" style="vertical-align: middle;" />**
-
-Il faudrait donc utiliser une base de données **SQLite** dont chaque table contiendrait les correspondances `Lettre | Ce qui sera prononcé`.
-
-2- **Gestion des écritures idéogrammiques** :ideograph_advantage:
-
-Comment gérer l'épellation des langages comme le chinois :cn:, le japonais :jp: ou le koréen :kr: ?
-
-Si un(e) spécialiste d'une de ces langues est inétressé(e), il (elle) sera le (la) bienvenu(e) ! :open_hands:
 
 ### :+1: Proposez votre aider pour developper une de ces fonctions
 
