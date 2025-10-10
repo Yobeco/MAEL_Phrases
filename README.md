@@ -105,7 +105,7 @@ Les élèves se connectant pourront faire ces activités en toute autonomie.
 - de voir de manière graphique mais simple ses progrès :chart_with_upwards_trend:.
 
 
-### :+1: Proposez votre aide au développement de la plate forme MAEL ! :chart_with_upwards_trend:
+### :+1: Proposez votre aide au développement de la plate forme MAEL ! :raised_hands:
 
 
 ---
