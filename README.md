@@ -7,7 +7,7 @@ Copyright (c) 2025 Yonnel Bécognée
 
 [![License: Libre Non Commerciale](https://img.shields.io/badge/license-GNU%20GENERAL%20PUBLIC%20LICENSE%20V3-white.svg)](./LICENSE)
 
-[![HTML](https://img.shields.io/badge/HTML5-9933FF?logo=html-V5&logoColor=FF66FF)]()
+[![HTML](https://img.shields.io/badge/HTML-5-9933FF?logo=html5&logoColor=FF66FF)]()
 
 [![SQLite](https://img.shields.io/badge/SQLite-V3.50.4%2B-003366?logo=sqlite&logoColor=99CCFF)](https://sqlite.org/)
 
