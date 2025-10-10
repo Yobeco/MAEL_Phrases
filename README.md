@@ -144,7 +144,7 @@ Les élèves se connectant pourront faire les activités en toute autonomie.
 
 ## G- Essayez MAEL Phrases en ligne
 
-Il s'agit d'une [**version alpha** de démonstration](https://yobeco.github.io/MAEL/index.html) qui utilise l'API de Gemini 2.5 <img src="https://cdn.simpleicons.org/googlechrome/FFFF" width="24" height="24" style="vertical-align: middle;" /> pour le moment.
+Il s'agit d'une [**version alpha** de démonstration](https://yobeco.github.io/MAEL/index.html) qui utilise l'API de Gemini 2.5 <img src="https://cdn.simpleicons.org/googlegemini/FFFF" width="24" height="24" style="vertical-align: middle;" /> pour le moment.
 
 :warning: Ce n'est pas une version de production, faites des éssais de manière modérée :raised_hand: afin de laisser tout le monde profiter des tokens disponibles.
 
