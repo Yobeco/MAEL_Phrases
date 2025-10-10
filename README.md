@@ -1,4 +1,4 @@
-![MAEL](./readme_assets/Logo-MAEL-120.png "Logo du projet MAEL")
+![MAEL](https://github.com/Yobeco/MAEL_Gen/blob/main/readme_assets/Logo-MAEL-120.png "Logo du projet MAEL")
 
 # MAEL Phrases
 
