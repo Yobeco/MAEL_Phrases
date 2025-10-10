@@ -9,9 +9,9 @@ Copyright (c) 2025 Yonnel Bécognée
 
 [![HTML](https://img.shields.io/badge/HTML-V5-E0E0E0?logo=html5&logoColor=FF8000)]()
 
-[![JavaScript](https://img.shields.io/badge/JavaScript-ES2025-E0E0E0?logo=javascript&logoColor=FF8000)]()
+[![JavaScript](https://img.shields.io/badge/JavaScript-ES2025-E0E0E0?logo=javascript&logoColor=FFE010)]()
 
-[![CSS](https://img.shields.io/badge/CSS-V3.50.4%2B-003366?logo=css&logoColor=99CCFF)](https://sqlite.org/)
+[![CSS](https://img.shields.io/badge/CSS-V3.50.4%2B-E0E0E0?logo=css&logoColor=0080FF)]()
 
 [![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-009900.svg)](#contributing) [![Beginner friendly](https://img.shields.io/badge/Beginner%20friendly-FF8000)]()
 
