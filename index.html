@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <title>MAEL V0.5</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+  <body>
+
+      <div id="container-corps">
+
+        <div id="col-gauche">
+
+          <div id="trou-cat">
+            <img id="logo-MAEL" src="Medias/Logo-MAEL-128px-Alpha.png">
+            <div> <span id="MAEL"> MAEL </span> <br> <span id="version"> Phrases<br>V0.5 </span> </div>
+          </div>
+
+          <div id="container-cat">
+          </div>
+
+        </div>
+
+        <div id="container-classeurs">
+          
+            <div id="container-onglets">
+            </div>
+
+            <div id="container-img">
+            </div>
+
+        </div>
+
+      </div>
+
+        <div id= "container-drop" >
+
+          <div id="container-poub">
+            <img id="poubelle" src="Medias/Poubelle-fermee.png">
+          </div>
+
+          <div id="container-line">
+          </div>
+
+        </div>
+
+
+      </div>
+
+      <div id="container-phrase">
+
+        <button class="boutons-bas" id="dire">
+          <img src="Medias/Dire.png" alt="Dire">
+        </button>
+
+        <div id="text-genere">
+          Texte généré depuis la liste de mots.
+        </div>
+
+      </div>
+
+      <div id="container-boutons">
+
+        <button class="boutons-bas">
+          <img src="Medias/Effacer.png" alt="Effacer">
+        </button>
+
+        <button class="boutons-bas">
+          <img src="Medias/Sauvegarder.png" alt="Sauvegarder">
+        </button>
+
+        <button class="boutons-bas">
+          <img src="Medias/Ouvrir.png" alt="Ouvrir">
+        </button>
+
+      </div>
+
+      <br /> <hr /> 
+
+    <script type="importmap">
+      {
+        "imports": {
+          "@google/generative-ai": "https://esm.run/@google/generative-ai"
+        }
+      }
+    </script>
+    <!-- Script placed at the end to wait for the page to load completely before execution -->
+    <script src="Sortable.min.js"></script>
+    <script type="module" src="script.js"></script>  <!-- type="module" / type="text/javascript" -->    
+    <script src="options.js"></script>
+ 
+
+  </body>
+
+</html>

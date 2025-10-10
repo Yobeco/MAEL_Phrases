@@ -1,0 +1,280 @@
+/* Violet : #af91ff   Bleu : #91c8ff   Vert : #96ff91   Jaune : #fff391   Rouge : #ff9191  Gris : #CACACA*/
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+h1{
+	text-align: center;
+	text-shadow: 6px 6px 10px rgba(0,0,0,0.30);
+	font-size: 2em;
+	margin-bottom: 15px;
+}
+
+body{
+	padding: 40px;
+}
+
+/**  Removing default browser styles **/
+#liste_pays {
+	-webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+	font-size: 30px;
+	border: none;
+	background-color: white;
+}
+
+#logo-MAEL{
+	width: 40px;
+	height: 40px;
+}
+
+#trou-cat{
+	display: flex;
+	line-height: 0.8;
+	height: 50px;
+}
+
+#trou-cat img{
+	margin-right: 10px;
+}
+
+#MAEL{
+	font-weight: bold;
+	font-family: "arial";
+}
+
+#version{
+	font-size: 0.8em;
+}
+
+#col-gauche{
+}
+
+#container-cat{
+	display: flex;
+	flex-direction: column-reverse;
+	height: 290px;
+}
+
+#container-entete{
+	display: flex;
+	flex-wrap: wrap;
+	margin-bottom: 5px;
+}
+
+h1 {
+	flex-grow: 1
+}
+
+.onglet{
+	border-radius: 15px 15px 0px 0px;
+	padding: 10px;
+	background-color: #959595;     /* Grey by default. Will be changed by Javascript */
+	filter: brightness(1.3) saturate(100%) drop-shadow(0px 0px 0px rgba(0, 0, 0, 0));
+	border: 1px solid rgba(0, 0, 0, 0.4);
+	border-bottom: 2px solid black;
+	cursor: pointer;
+}
+
+.onglet.active{
+	/*  https://developer.mozilla.org/fr/docs/Web/CSS/filter  */
+	filter: brightness(1) saturate(100%) drop-shadow(0px -4px 2px rgba(0, 0, 0, 0.3));
+	border: 2px solid rgba(0, 0, 0, 1);
+	border-bottom: none;
+}
+
+.onglet:hover{
+		border: 2px solid rgba(0, 0, 0, 0.8);
+		border-bottom: 0px;
+}
+
+/**  Select the <img> contained in the "onglet" class DIV - Impose a size **/
+.onglet img {
+	width: 3em;
+}
+
+.etiquettes{
+	border-style: solid;
+	border-width: 5px;
+	border-color: white;     /* Grey by default. Will be changed by Javascript */
+	background-color: white;
+	padding: 5px;
+	margin: 1%;
+	border-radius: 15px;
+	box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.5);
+	width: 14%;
+	min-width: 50px;
+	max-width: 120px;
+	cursor: pointer;
+}
+
+/**  Increase the visibility of the label when the mouse is over it by reinforcing the shadow.
+	 --> Completes the colored border, which can only be imposed in Javascript, since the info is given by the JSON **/
+.etiquettes:hover{
+		filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.8));
+}
+
+
+/**  Select the DIV containing the tabs **/
+#container-onglets{
+	height: 50px;           /* Height kept at 50px to avoid jerking when refreshing */
+	display: flex;					/* Better control of space */
+	flex-direction: row;	  /* in-line tab layout */
+	flex-wrap: wrap;				/* Back to the line if overrun */
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-top: 0px;
+	margin-bottom: -7px;
+	/* border: 1px solid; */
+}
+
+#trou_onglets{
+	flex-grow: 1;
+	border-bottom: 2px solid;
+	text-align: right;
+}
+
+#container-corps{
+	display: flex;
+}
+
+/* .container-img must take up the full width, which means that its parent <div> must also take up the full width.*/
+
+#container-classeurs{
+	width: 100%;
+}
+
+#container-img{
+	height: 270px;
+	border-style: solid;
+	border-width: 2px;
+	border-top: none;
+	border-left: none;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-top: 5px;
+	margin-bottom: 0px;
+	padding: 10px;
+	border-radius:  0px 0px 0px 0px;
+	overflow: auto; /* Adds the scroll bar when necessary */
+}
+
+/* ------------------------------------------------------------------------------  */
+
+
+#container-drop{
+	display: flex;
+}
+
+#container-line{
+	width: 100%;
+	min-height: 120px;
+	background-color: #feee69;
+	margin: 5px;
+	padding: 5px;
+	border-radius: 15px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+#container-line img{
+height: auto;
+width: 11%;    /* To match the 14% of .etiquettes images */
+padding: 10px;
+padding-left: 10px;
+min-width: 50px;
+max-width: 120px;
+}
+
+#poubelle{
+	width: 50px;
+	padding: 10px;
+}
+
+/* ------------------------------------------------------------------------------  */
+
+#container-phrase{
+	background-color: #dff4ff;
+	margin: 5px;
+	border-radius: 15px;
+	display: flex;
+	align-items: center;
+}
+
+/* ------------------------------------------------------------------------------  */
+
+#container-boutons{
+	background-color: #dff4ff;
+	margin: 5px;
+	border-radius: 15px;
+	margin-bottom: 10px;
+}
+
+.bouton_cat {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  padding: 10px;
+  background-color: #ddd;  /* Grey but will be recoloured from the colour indicated in the JSON */
+  font-size: 1em;
+  border-radius: 15px 0px 0px 15px;
+  cursor: pointer;
+  filter: brightness(1.3) saturate(100%) drop-shadow(0px 0px 0px rgba(0, 0, 0, 0));
+	border: 2px solid rgba(0, 0, 0, 0.4);
+	border-right: 2px solid rgba(0, 0, 0, 1);
+}
+
+.bouton_cat.active{
+	filter: brightness(1) saturate(100%) drop-shadow(-4px 0px 2px rgba(0, 0, 0, 0.3));
+	border: 2px solid rgba(0, 0, 0, 1);
+	border-right: none;
+}
+
+.bouton_cat:hover{
+	border: 2px solid rgba(0, 0, 0, 1);
+	border-right: none;
+}
+
+.bouton_cat img {
+  margin-right: 10px;
+}
+
+#text-genere{
+  width: 100%;
+  height: 30px;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.5);;
+  border-radius: 15px;
+  margin-right: 5px;
+  padding: 10px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  font-family: "Arial";
+  font-size: 1.5em;
+  box-shadow: inset -5px -5px 10px rgba(0, 0, 0, 0.3); /* Shadow inside */
+}
+
+.boutons-bas{
+	border-radius: 15px;
+	margin: 5px;
+	padding: 7px;
+}
+
+.boutons-bas img{
+	width: auto;
+  height: 30px;
+}
+
+
+.sortable-chosen{
+	transform: translateY(2px) translatex(2px);
+}
+
+.futur-place {
+  opacity: 25%;
+  transition: opacity 1s ease-in-out;
+}
