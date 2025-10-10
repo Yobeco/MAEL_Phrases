@@ -128,7 +128,7 @@ Les élèves se connectant pourront faire les activités en toute autonomie.
 
 ### :star2: Contributeurs
 
-Un grand merci à toutes les personnes qui vont contribuer à ce projet !
+:open_hands: Un grand merci à toutes les personnes qui vont contribuer à ce projet ! 
 
 | Avatar | Nom                | GitHub                          | Rôle                     |
 |--------|--------------------|---------------------------------|--------------------------|
