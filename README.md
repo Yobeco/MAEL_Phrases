@@ -146,5 +146,5 @@ Les élèves se connectant pourront faire les activités en toute autonomie.
 
 Il s'agit d'une [**version alpha** de démonstration](https://yobeco.github.io/MAEL/index.html) qui utilise l'API de Gemini 2.5.
 
-Ce n'est pas une version de production, faites des éssais de manière modérée :raised_hand: afin de laisser tout le monde profiter des tokens disponibles.
+:warning: Ce n'est pas une version de production, faites des éssais de manière modérée :raised_hand: afin de laisser tout le monde profiter des tokens disponibles.
 
