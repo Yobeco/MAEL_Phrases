@@ -148,4 +148,6 @@ Les élèves se connectant pourront faire les activités en toute autonomie.
 
 Il s'agit d'une [**version alpha** de démonstration](https://yobeco.github.io/MAEL/index.html) qui utilise l'API de Gemini 2.5 <img src="https://cdn.simpleicons.org/googlegemini/FFFF" width="24" height="24" style="vertical-align: middle;" /> pour le moment.
 
+:warning: Utilise Chrome <img src="https://cdn.simpleicons.org/googlechrome/FFFF" width="24" height="24" style="vertical-align: middle;" /> pour cette démo ! La voix de FireFox <img src="https://cdn.simpleicons.org/firefox/FFFF" width="24" height="24" style="vertical-align: middle;" /> est horrible... C'est dommage...
+
 :warning: Ce n'est pas une version de production, faites des essais de manière modérée :raised_hand: afin de laisser tout le monde profiter des tokens disponibles.
