@@ -18,8 +18,6 @@ Copyright (c) 2023 Yonnel Bécognée
 
 ## :fr: [French](https://github.com/Yobeco/MAEL_Phrases/blob/main/README.fr.md) | :gb: English
 
----
-
 ![](https://github.com/Yobeco/MAEL_Project/blob/main/readme_assets/MAEL_Phrase-b-600px.png)
 
 ## A- Description :eye:
