@@ -18,9 +18,6 @@ Copyright (c) 2023 Yonnel Bécognée
 
 ## :fr: [Français](https://github.com/Yobeco/MAEL_Phrases) | :gb: English
 
----
-
----
 
 ![](https://github.com/Yobeco/MAEL_Project/blob/main/readme_assets/MAEL_Phrase-b-600px.png)
 
@@ -37,8 +34,6 @@ Son interface est conçue pour être utilisée par un enfant, dés 6 ans :baby:.
 
 ---
 
----
-
 ## B- Fonctionnalités :clipboard:
 
 **MAEL Phrases** est en version alpha. Il s'agit d'une démonstration de ce qui sera le coeur d'une plateforme pédagogiques permettant à l'enseignant de créer et de suivre la progression des activités sur mesure qu'il a créé pour ses élèves.   
@@ -52,13 +47,9 @@ Les élèves se connectant pourront faire les activités en toute autonomie.
 
 ---
 
----
-
 ## C- Comment utiliser MAEL Phrases ? :blush:
 
 :warning: Préférez Chrome <img src="https://cdn.simpleicons.org/googlechrome/FFFF" width="24" height="24" style="vertical-align: middle;" />. Malheureusement, la voix de FireFox <img src="https://cdn.simpleicons.org/firefox/FFFF" width="24" height="24" style="vertical-align: middle;" /> n'est pas à la hauteur...
-
----
 
 ---
 
@@ -67,13 +58,9 @@ Les élèves se connectant pourront faire les activités en toute autonomie.
 
 ---
 
----
-
 ## D- Principe de fonctionnement :gear:
 
 *(Pour aider à la compréhension du code)*
-
----
 
 ---
 
@@ -85,8 +72,6 @@ Les élèves se connectant pourront faire les activités en toute autonomie.
 1. La même phrase est envoyée à la voix de synthèse :speaking_head: du navigateur.
 
 **MAEL Phrase** Utilisera un [**back end en Kotlin**](https://github.com/Yobeco/MAEL_Backend) <img src="https://cdn.simpleicons.org/kotlin/FFFF" width="24" height="24" style="vertical-align: middle;" /> (déjà commencé, mais à l'arrêt... :disappointed:) pour accéder à [sa base de données](https://github.com/Yobeco/MAEL_Phrases/blob/main/readme_assets/MAEL-Phrase%20-%20Description%20fonctionnelle%20-%20V2.pdf) en **PostgresSQL** <img src="https://cdn.simpleicons.org/postgresql/FFFF" width="24" height="24" style="vertical-align: middle;" />.
-
----
 
 ---
 
@@ -140,8 +125,6 @@ Les élèves se connectant pourront faire les activités en toute autonomie.
 
 ---
 
----
-
 ## F- Participez au projet MAEL :open_hands:
 
 :ring_buoy: Pour **obtenir de l'aide** concernant l'utilisation de MAEL ou pour **paticiper au développement** :computer:, écrivez-moi ici :
@@ -159,8 +142,6 @@ Les élèves se connectant pourront faire les activités en toute autonomie.
 | ... | ... | ... | Développeur |
 | ... | ... | ... | Développeuse |
 | ... | ... | ... | Illustrateur (trice) |
-
----
 
 ---
 
