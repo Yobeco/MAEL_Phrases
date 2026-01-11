@@ -147,6 +147,7 @@ Connected students will be able to complete the activities autonomously.
 ## G- Try MAEL Phrases online
 
 This is a demonstration [**alpha version**](https://yobeco.github.io/MAEL/index.html) that currently uses the Gemini 2.5 API <img src="https://cdn.simpleicons.org/googlegemini/FFFF" width="24" height="24" style="vertical-align: middle;" />.
+
 :warning: Use Chrome <img src="https://cdn.simpleicons.org/googlechrome/FFFF" width="24" height="24" style="vertical-align: middle;" /> for this demo! The voice in Firefox <img src="https://cdn.simpleicons.org/firefox/FFFF" width="24" height="24" style="vertical-align: middle;" /> is hideous.
 
 :warning: This is not a production version; please test moderately :raised_hand: so that everyone can benefit from the available tokens.
