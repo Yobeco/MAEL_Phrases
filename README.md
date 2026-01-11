@@ -16,9 +16,7 @@ Copyright (c) 2023 Yonnel Bécognée
 
 [![Status: Active](https://img.shields.io/badge/status-active-009900.svg)]()
 
-## :fr: [French](https://github.com/Yobeco/MAEL_Phrases) | :gb: English
-
----
+## :fr: [French](https://github.com/Yobeco/MAEL_Phrases/blob/main/README.fr.md) | :gb: English
 
 ---
 
@@ -37,8 +35,6 @@ Its interface is designed to be used by a child, from the age of 6 :baby:.
 
 ---
 
----
-
 ## B- Features :clipboard:
 
 **MAEL Phrases** is in alpha version. This is a demonstration of what will be the core of a pedagogical platform allowing teachers to create and monitor the progress of custom activities they have created for their students.   
@@ -52,13 +48,9 @@ Connected students will be able to complete the activities autonomously.
 
 ---
 
----
-
 ## C- How to use MAEL Phrases? :blush:
 
 :warning: Prefer Chrome <img src="https://cdn.simpleicons.org/googlechrome/FFFF" width="24" height="24" style="vertical-align: middle;" />. Unfortunately, the Firefox voice <img src="https://cdn.simpleicons.org/firefox/FFFF" width="24" height="24" style="vertical-align: middle;" /> is not up to standard...
-
----
 
 ---
 
@@ -67,13 +59,9 @@ Connected students will be able to complete the activities autonomously.
 
 ---
 
----
-
 ## D- Operating principle :gear:
 
 *(To help with understanding the code)*
-
----
 
 ---
 
@@ -85,8 +73,6 @@ Connected students will be able to complete the activities autonomously.
 1. The same sentence is sent to the browser’s text-to-speech voice :speaking_head:.
 
 **MAEL Phrase** will use a [**Kotlin back end**](https://github.com/Yobeco/MAEL_Backend) <img src="https://cdn.simpleicons.org/kotlin/FFFF" width="24" height="24" style="vertical-align: middle;" /> (already started, but currently halted... :disappointed:) to access [its database](https://github.com/Yobeco/MAEL_Phrases/blob/main/readme_assets/MAEL-Phrase%20-%20Description%20fonctionnelle%20-%20V2.pdf) in **PostgresSQL** <img src="https://cdn.simpleicons.org/postgresql/FFFF" width="24" height="24" style="vertical-align: middle;" />.
-
----
 
 ---
 
@@ -140,8 +126,6 @@ Connected students will be able to complete the activities autonomously.
 
 ---
 
----
-
 ## F- Take part in the MAEL project :open_hands:
 
 :ring_buoy: To **get help** regarding the use of MAEL or to **participate in development** :computer:, write to me here:
@@ -159,8 +143,6 @@ Connected students will be able to complete the activities autonomously.
 | ... | ... | ... | Developer |
 | ... | ... | ... | Developer |
 | ... | ... | ... | Illustrator |
-
----
 
 ---
 
