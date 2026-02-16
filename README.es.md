@@ -16,9 +16,7 @@ Copyright (c) 2023 Yonnel Bécognée
 
 [![Estado: Activo](https://img.shields.io/badge/status-active-009900.svg)]()
 
-## :fr: [Francés](https://github.com/Yobeco/MAEL_Phrases) | :gb: Inglés
-
----
+## :fr: [Français](https://github.com/Yobeco/MAEL_Phonofouille/blob/main/README.fr.md) | :es: [Español](https://github.com/Yobeco/MAEL_Phonofouille/blob/main/README.es.md)  |  :gb: English
 
 ---
 
@@ -37,8 +35,6 @@ Su interfaz está diseñada para ser utilizada por un niño, a partir de los 6 a
 
 ---
 
----
-
 ## B- Funcionalidades :clipboard:
 
 **MAEL Phrases** se encuentra en versión alfa. Se trata de una demostración de lo que será el núcleo de una plataforma pedagógica que permitirá al docente crear y seguir el progreso de actividades personalizadas que haya creado para sus alumnos.   
@@ -52,28 +48,21 @@ Los alumnos que se conecten podrán realizar las actividades de manera autónoma
 
 ---
 
----
-
 ## C- ¿Cómo usar MAEL Phrases? :blush:
 
 :warning: Prefiera Chrome <img src="https://cdn.simpleicons.org/googlechrome/FFFF" width="24" height="24" style="vertical-align: middle;" />. Lamentablemente, la voz de Firefox <img src="https://cdn.simpleicons.org/firefox/FFFF" width="24" height="24" style="vertical-align: middle;" /> no está a la altura...
 
 ---
 
----
 
 1. **Arrastre y suelte** imágenes provenientes de la biblioteca siguiendo la lógica de una frase
 1. **Pulse el botón “boca”** para oralizar su frase.
 
 ---
 
----
-
 ## D- Principio de funcionamiento :gear:
 
 *(Para ayudar a la comprensión del código)*
-
----
 
 ---
 
@@ -85,8 +74,6 @@ Los alumnos que se conecten podrán realizar las actividades de manera autónoma
 1. La misma frase se envía a la voz de síntesis :speaking_head: del navegador.
 
 **MAEL Phrase** utilizará un [**back end en Kotlin**](https://github.com/Yobeco/MAEL_Backend) <img src="https://cdn.simpleicons.org/kotlin/FFFF" width="24" height="24" style="vertical-align: middle;" /> (ya iniciado, pero actualmente detenido... :disappointed:) para acceder a [su base de datos](https://github.com/Yobeco/MAEL_Phrases/blob/main/readme_assets/MAEL-Phrase%20-%20Description%20fonctionnelle%20-%20V2.pdf) en **PostgresSQL** <img src="https://cdn.simpleicons.org/postgresql/FFFF" width="24" height="24" style="vertical-align: middle;" />.
-
----
 
 ---
 
@@ -140,8 +127,6 @@ Los alumnos que se conecten podrán realizar las actividades de manera autónoma
 
 ---
 
----
-
 ## F- Participe en el proyecto MAEL :open_hands:
 
 :ring_buoy: Para **obtener ayuda** sobre el uso de MAEL o para **participar en el desarrollo** :computer:, escríbame aquí:
@@ -159,8 +144,6 @@ Los alumnos que se conecten podrán realizar las actividades de manera autónoma
 | ... | ... | ... | Desarrollador |
 | ... | ... | ... | Desarrolladora |
 | ... | ... | ... | Ilustrador(a) |
-
----
 
 ---
 

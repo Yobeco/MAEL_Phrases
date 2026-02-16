@@ -16,7 +16,7 @@ Copyright (c) 2023 Yonnel Bécognée
 
 [![Status: Active](https://img.shields.io/badge/status-active-009900.svg)]()
 
-## :fr: Français | :gb: [English](https://github.com/Yobeco/MAEL_Phrases)
+## :fr: Français | :es: [Español](https://github.com/Yobeco/MAEL_Phonofouille/blob/main/README.es.md)  | :gb: [English](https://github.com/Yobeco/MAEL_Phonofouille/blob/main/README.md)
 
 ![](https://github.com/Yobeco/MAEL_Project/blob/main/readme_assets/MAEL_Phrase-b-600px.png)
 
