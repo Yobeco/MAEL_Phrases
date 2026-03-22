@@ -556,7 +556,70 @@ async function generList(){
 
 // Gemini configuration
 
+import { GoogleGenerativeAI } from "@google/generative-ai";
 
+// Initialisation avec votre clé
+const genAI = new GoogleGenerativeAI("AIzaSyAZcOhtqSZQ0pc-R9MnnvWeMcXXUhhmXSE");
+
+let promptAI = ""; 
+// Note : Assurez-vous que 'mitCode' est défini globalement ou passé en paramètre
+let prompt_xxXXX = ""; 
+
+/**
+ * Charge le contenu du fichier texte de prompt
+ */
+async function chargPrompt() {
+    // Mise à jour du nom du fichier selon la langue (mitCode)
+    prompt_xxXXX = "prompt_" + mitCode + ".txt";
+    console.log("--> Fichier de prompt utilisé : " + prompt_xxXXX);
+
+    try {
+        const response = await fetch(prompt_xxXXX);
+        if (!response.ok) throw new Error("Fichier introuvable");
+        
+        const data = await response.text();
+        promptAI = data;
+        
+        // Utilisation d'une version simplifiée de truncate pour le log
+        console.log("Variable 'promptAI' mise à jour : " + promptAI.substring(0, 120) + "...");
+    } catch (error) {
+        console.error('Erreur lors de la récupération du texte du prompt:', error);
+    }
+}
+
+/**
+ * Envoie le prompt et la liste de mots à l'API Gemini
+ */
+async function liste_to_AI(txt0) {
+    // 1. On attend le chargement du fichier de prompt
+    await chargPrompt();
+    
+    // 2. Utilisation de gemini-2.0-flash (Stable, rapide et gratuit)
+    const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
+
+    // 3. Construction du message final
+    const promptToSend = promptAI + "\n\n" + txt0; 
+    console.log("Prompt ENVOYÉ à l'IA (extrait) : ", promptToSend.substring(0, 100));
+
+    try {
+        // 4. Appel de l'API avec gestion de la réponse moderne
+        const result = await model.generateContent(promptToSend);
+        
+        // Sur le SDK actuel, result.response est déjà l'objet final
+        const response = result.response;
+        const text = response.text(); 
+        
+        return text;
+    } catch (error) {
+        console.error("Erreur API Gemini :", error);
+        // Gestion spécifique si le modèle est surchargé ou le contenu bloqué
+        return "Une erreur est survenue lors de la génération.";
+    }
+}
+
+/*
+
+// Pour Gemini 1.5 (Obsolète)
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
 // Access your API key (see "Set up your API key" above)
@@ -587,7 +650,8 @@ async function chargPrompt() {
     }
 }
 
-// chargPrompt();
+*/
+
 
 // Envoyer le prompt dans la bonne langue suivi de la liste de mots
 async function liste_to_AI(txt0) {
@@ -605,6 +669,7 @@ async function liste_to_AI(txt0) {
     // console.log(text);
     return text;
 }
+
 
 
 // ##################################################################
