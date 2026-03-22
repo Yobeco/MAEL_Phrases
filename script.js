@@ -650,8 +650,6 @@ async function chargPrompt() {
     }
 }
 
-*/
-
 
 // Envoyer le prompt dans la bonne langue suivi de la liste de mots
 async function liste_to_AI(txt0) {
@@ -670,7 +668,7 @@ async function liste_to_AI(txt0) {
     return text;
 }
 
-
+*/
 
 // ##################################################################
 
